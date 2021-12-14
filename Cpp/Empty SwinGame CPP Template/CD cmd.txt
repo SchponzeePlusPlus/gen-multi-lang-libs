@@ -1,0 +1,9 @@
+for minGW:
+cd /e/Documents_Primary/CodeTesting_Offline/Test_Cpp/
+
+/Test_Cpp/
+
+For Test C++:
+g++ main.cpp -o TestCode.exe
+
+TestCode.exe
