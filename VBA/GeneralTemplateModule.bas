@@ -5,7 +5,7 @@ Attribute VB_Name = "GeneralTemplateModule"
 '	Write description of source file here for dOxygen.
 '
 '	System:         Independant Tool
-'	Component Name: Suspended Magnet Selection Program Rev0 (Excel), Module Tramp Height Magnet (THM)
+'	Component Name: 
 '  
 '	Language: VBA (General Use for ~all MS Office Applications)
 '
@@ -20,7 +20,7 @@ Attribute VB_Name = "GeneralTemplateModule"
 '		
 '	Author E-Mail: 
 '
-'	Description / Abstract: Module file for Suspended Magnet Selection Program Rev0 (Excel)
+'	Description / Abstract: Module file
 '		This file contains the defined types for Project X:
 '		Notes:
 '
