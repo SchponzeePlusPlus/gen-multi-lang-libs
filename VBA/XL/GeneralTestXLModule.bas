@@ -1,5 +1,5 @@
 Attribute VB_Name = "GeneralTestXLModule"
-'   Eriez Magnetics Australia Excel VBA
+'   Excel VBA
 '   General Use Testing Module
 '   GeneralTestXLModule
 '   Leonard Sponza

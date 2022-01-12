@@ -1,5 +1,5 @@
 Attribute VB_Name = "GeneralACCModule"
-'   Eriez Magnetics Australia MS Access VBA
+'   MS Access VBA
 '   General Use Module
 '   Access Database
 '   GeneralACCModule

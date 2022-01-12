@@ -17,10 +17,8 @@ Attribute VB_Name = "GeneralMathModule"
 '	Licensed Material - N/A
 '	Open-Source Code
 '	Address:
-'		Eriez Magnetics Pty Ltd., Sales & R&D Department
-'		21 Shirley Way
-'		Epping, Victoria, Australia 3076
-'	Author E-Mail: lsponza@eriez.com
+'		
+'	Author E-Mail: 
 '
 '	Description / Abstract: Module file for Suspended Magnet Selection Program Rev0 (Excel)
 '		This file contains the defined types for Project X:

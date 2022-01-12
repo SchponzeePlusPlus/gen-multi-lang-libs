@@ -1,5 +1,5 @@
 Attribute VB_Name = "CustomXLLibrary"
-'   Eriez Magnetics Australia Excel VBA
+'   Excel VBA
 '   General Use Module
 '   CustomXLLibrary
 '   Leonard Sponza

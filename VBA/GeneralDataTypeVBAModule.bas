@@ -1,5 +1,5 @@
 Attribute VB_Name = "GeneralDataTypeVBAModule"
-'   Eriez Magnetics Australia MS VBA
+'   MS VBA
 '   General Use Module (for all MS applications)
 '   GeneralDataTypeVBAModule
 '   Leonard Sponza

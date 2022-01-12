@@ -13,14 +13,12 @@ Attribute VB_Name = "GeneralFinancialModule"
 '	@author Leonard Sponza
 '	@version 0.41.0
 
-'	License: N/A PRIVATE SOURCE CODE
-'	Licensed Material - Property of Eriez
-'	Copyright (c) 2021 Eriez Australia. All rights reserved.
+'	License: 
+'	Licensed Material - 
+'	
 '	Address:
-'		Eriez Magnetics Pty Ltd., Sales & R&D Department
-'		21 Shirley Way
-'		Epping, Victoria, Australia 3076
-'	Author E-Mail: lsponza@eriez.com
+'		
+'	Author E-Mail: 
 '
 '	Description / Abstract: Module file for Suspended Magnet Selection Program Rev0 (Excel)
 '		This file contains the defined types for Project X:

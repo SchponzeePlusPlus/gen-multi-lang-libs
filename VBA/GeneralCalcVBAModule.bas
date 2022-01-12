@@ -1,5 +1,5 @@
 Attribute VB_Name = "GeneralCalcVBAModule"
-'   Eriez Magnetics Australia MS Office VBA
+'   MS Office VBA
 '   General Use Calculation Module (Not Eriez Engineering Specific)
 '   GeneralCalcVBAModule
 '   Leonard Sponza

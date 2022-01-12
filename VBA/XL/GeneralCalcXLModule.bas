@@ -1,5 +1,5 @@
 Attribute VB_Name = "GeneralCalcXLModule"
-'   Eriez Magnetics Australia Excel VBA
+'   Excel VBA
 '   General Use Module
 '   GeneralCalcXLModule
 '   Leonard Sponza
