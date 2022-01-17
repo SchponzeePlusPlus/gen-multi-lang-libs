@@ -1,6 +1,6 @@
 Attribute VB_Name = "GeneralCalcVBAModule"
 '   MS Office VBA
-'   General Use Calculation Module (Not Eriez Engineering Specific)
+'   General Use Calculation Module (for all MS applications)
 '   GeneralCalcVBAModule
 '   Leonard Sponza
 '   Last Modified 15/09/2021 13:00
