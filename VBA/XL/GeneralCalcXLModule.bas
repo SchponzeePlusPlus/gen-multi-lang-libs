@@ -341,6 +341,45 @@ Public Function CONCAT_FIND_RESULTS_000_V000(find_range As Range, lookup_value A
 	CONCAT_FIND_RESULTS_000_V000 = result
 End Function
 
+'	produces the cartesian product between two lists (single column ranges)
+Public Function CALC_CARTESIAN_PRODUCT_TWO_LISTS_V000(list_one As Range, list_two As Range) As Variant()
+	Dim result() As Variant
+	Dim result_odadt As ArrayDimensionsType
+	Dim arr_one() As Variant
+	Dim arr_one_odadt As ArrayDimensionsType
+	Dim arr_two() As Variant
+	Dim arr_two_odadt As ArrayDimensionsType
+
+	Dim i As Long
+	Dim j As Long
+	Dim k As Long
+
+	arr_one = CONVERT_RANGE_TO_ONE_DIM_ARRAY(list_one, "RIGHTWARDS_ALONG_ROWS_FIRST")
+	arr_two = CONVERT_RANGE_TO_ONE_DIM_ARRAY(list_two, "RIGHTWARDS_ALONG_ROWS_FIRST")
+	arr_one_odadt = CREATE_VARIANT_ARR_ONE_DIM_ARRAYDIMSTYPE(arr_one)
+	arr_two_odadt = CREATE_VARIANT_ARR_ONE_DIM_ARRAYDIMSTYPE(arr_two)
+
+	result_odadt.l_bnd = 0
+	result_odadt.length = arr_one_odadt.length * arr_two_odadt.length
+	result_odadt.u_bnd = result_odadt.length - 1
+
+	ReDim result(result_odadt.l_bnd To result_odadt.u_bnd, 0 To 1)
+
+	i = 0
+	j = i
+	k = j
+
+	For i = arr_one_odadt.l_bnd To arr_one_odadt.u_bnd
+		For j = arr_two_odadt.l_bnd To arr_two_odadt.u_bnd
+			result(k, 0) = arr_one(i)
+			result(k, 1) = arr_two(j)
+			k = k + 1
+		Next
+	Next
+
+	CALC_CARTESIAN_PRODUCT_TWO_LISTS_V000 = result
+End Function
+
 Public Function CONVERT_VALUE_ANGLE_DEG_TO_RAD(input_angle_deg As Double) As Double
 	CONVERT_VALUE_ANGLE_DEG_TO_RAD = input_angle_deg * ((WorksheetFunction.Pi()) / 180)
 End Function
