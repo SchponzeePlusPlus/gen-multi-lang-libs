@@ -64,6 +64,20 @@ Attribute VB_Name = "GeneralMathVBAModule"
 '
 '	Routines Called:
 
+Public Function CALC_N_FACTORIAL_V000(n As Long) As Long
+    Dim i As Long
+    Dim result As Long
+
+    '   0! = 1
+    '   https://www.cuemath.com/numbers/factorial/
+    result = 1
+    For i = 1 To n
+        result = result * i
+    Next
+
+    CALC_N_FACTORIAL_V000 = result
+End Function
+
 Public Function CALC_HYP_PYTHAGOREAN_THEOREM_VIA_A_B_V000(a As Double, b As Double) As Double
     CALC_HYP_PYTHAGOREAN_THEOREM_VIA_A_B_V000 = (a ^(2) + b ^(2))^(1/2)
 End Function
