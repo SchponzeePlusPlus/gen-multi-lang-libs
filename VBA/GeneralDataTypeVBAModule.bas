@@ -82,12 +82,67 @@ Option Explicit
 '   Max means maximum possible value like infinity
 '   Epsilon small positive infinitesimal quantity
 
+'   Natural VBA Error Data Types
+'   As stated in:
+'   http://www.cpearson.com/excel/ReturningErrors.aspx
+'   Defined in the XLCVError Enum definition:
+'   xlErrDiv0 (= 2007) returns a #DIV/0! error.
+'   xlErrNA (= 2042) returns a #N/A error.
+'   xlErrName (= 2029) returns a #NAME? error.
+'   xlErrNull (= 2000) returns a #NULL! error.
+'   xlErrNum (= 2036) returns a #NUM! error.
+'   xlErrRef (= 2023) returns a #REF! error.
+'   xlErrValue (= 2015) returns a #VALUE! error.
+'   Use CVErr() function with one of these values to return a specific Variant Error
+
 '   Integer Data Type
 '   https://docs.microsoft.com/en-us/dotnet/visual-basic/language-reference/data-types/integer-data-type
 '   Signed 32-bit values that range between -2147483648 to 2147483647
-Public Const ERROR_INTEGER_VAL As Integer = -32700
-NULL_INTEGER_VAL
-UNASSIGNED_INTEGER_VAL
-NOT_AVAIL_INTEGER_VAL
+
+Public Const ZERO_INTEGER_VAL As Integer = 0
+Public Const NULL_INTEGER_VAL As Integer = -2147483500
 '   Actual default
-DEFAULT_INTEGER_VAL = 0
+Public Const DEFAULT_INTEGER_VAL As Integer = 0
+Public Const UNASSIGNED_INTEGER_VAL As Integer = 
+Public Const UNKNOWN_INTEGER_VAL As Integer = 
+Public Const UNCATEGORISED_INTEGER_VAL As Integer = 
+Public Const UNDEFINED_INTEGER_VAL As Integer = 
+Public Const ERROR_INTEGER_VAL As Integer = -32700
+Public Const ERROR_NAME_INTEGER_VAL As Integer = 
+Public Const ERROR_NUM_INTEGER_VAL As Integer = 
+Public Const ERROR_NUM_DIV_ZERO_INTEGER_VAL As Integer = 
+Public Const ERROR_NUM_UNDEFINED_INTEGER_VAL As Integer = 
+Public Const ERROR_REF_INTEGER_VAL As Integer = 
+Public Const NOT_AVAIL_INTEGER_VAL As Integer = 
+Public Const NOT_APPLICABLE_INTEGER_VAL As Integer = 
+Public Const MISC_INTEGER_VAL As Integer = 
+Public Const OTHER_INTEGER_VAL As Integer = 
+Public Const TEST_INTEGER_VAL As Integer = 
+Public Const MULTI_VAL_INTEGER_VAL As Integer = 
+Public Const ALL_VAL_INTEGER_VAL As Integer = 
+Public Const VALID_INTEGER_VAL As Integer = 
+Public Const NEGATIVE_MAX_INTEGER_VAL As Integer = -2147483648
+Public Const NEGATIVE_INFINITY_INTEGER_VAL As Integer = -2147483647
+Public Const NEGATIVE_EPSILON_INTEGER_VAL As Integer = 
+Public Const EPSILON_INTEGER_VAL As Integer = 
+Public Const INFINITY_INTEGER_VAL As Integer = 2147483646
+Public Const MAX_INTEGER_VAL As Integer = 2147483647
+
+'   Now that error / exception handling "codes" have taken up specific integer values
+'   , those values shouldn't be usable for other means such as ordinary calculations or variable assignment
+Public Const USABLE_UPPER_BOUNDARY_INTEGER_VAL As Integer = 
+Public Const USABLE_LOWER_BOUNDARY_INTEGER_VAL As Integer = 
+
+Public Enum ExtendedBoolV000
+    TRUE_EXT_BOOL
+    FALSE_EXT_BOOL
+    INBETWEEN
+    NULL
+    DEFAULT
+    UNASSIGNED
+    UNKNOWN
+End Enum
+
+Public Function PRINT_STRING_OF_VARIANT_TYPENAME_V000(var As Variant) As String
+	PRINT_STRING_OF_VARIANT_TYPENAME_V000 = TypeName(var)
+End Function

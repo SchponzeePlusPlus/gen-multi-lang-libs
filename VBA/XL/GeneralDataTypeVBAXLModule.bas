@@ -67,53 +67,80 @@ Attribute VB_Name = "GeneralTemplateModule"
 Option Explicit
 
 Public Function WRAP_CELL_VAL_TO_VARIANT_V000(in_cell As Range) As Variant
-    '   does it need a check to ensure range is one cell?
-    WRAP_CELL_VAL_TO_VARIANT_V000 = in_cell.Value2
+	'   does it need a check to ensure range is one cell?
+	WRAP_CELL_VAL_TO_VARIANT_V000 = in_cell.Value2
 End Function
 
 Public Function CHECK_RANGE_ROW_CNT_V000(in_range As Range, expected_row_cnt As Integer) As Boolean
-    Dim result As Boolean
-    If (in_range.Rows.Count = expected_row_cnt) Then
-        result = True
-    Else
-        result = False
-    End If
-        CHECK_RANGE_ROW_CNT_V000 = result
+	Dim result As Boolean
+	If (in_range.Rows.Count = expected_row_cnt) Then
+		result = True
+	Else
+		result = False
+	End If
+		CHECK_RANGE_ROW_CNT_V000 = result
 End Function
 
 Public Function CHECK_RANGE_COL_CNT_V000(in_range As Range, expected_col_cnt As Integer) As Boolean
-    Dim result As Boolean
-    If (in_range.Columns.Count = expected_col_cnt) Then
-        result = True
-    Else
-        result = False
-    End If
-        CHECK_RANGE_COL_CNT_V000 = result
+	Dim result As Boolean
+	If (in_range.Columns.Count = expected_col_cnt) Then
+		result = True
+	Else
+		result = False
+	End If
+		CHECK_RANGE_COL_CNT_V000 = result
 End Function
 
 Public Function CHECK_RANGE_ROW_COL_CNT_V000(in_range As Range, expected_row_cnt As Integer, expected_col_cnt As Integer) As Boolean
-    Dim result As Boolean
-    If ((CHECK_RANGE_ROW_CNT_V000(in_range, expected_row_cnt)) And (CHECK_RANGE_COL_CNT_V000(in_range, expected_col_cnt))) Then
-        result = True
-    Else
-        result = False
-    End If
-    CHECK_RANGE_ROW_COL_CNT_V000 = result
+	Dim result As Boolean
+	If ((CHECK_RANGE_ROW_CNT_V000(in_range, expected_row_cnt)) And (CHECK_RANGE_COL_CNT_V000(in_range, expected_col_cnt))) Then
+		result = True
+	Else
+		result = False
+	End If
+	CHECK_RANGE_ROW_COL_CNT_V000 = result
 End Function
 
 Public Function CHECK_RANGE_SINGLE_ROW_CNT_V000(in_range As Range) As Boolean
-    CHECK_RANGE_SINGLE_ROW_CNT_V000 = CHECK_RANGE_ROW_CNT_V000(in_range, 1)
+	CHECK_RANGE_SINGLE_ROW_CNT_V000 = CHECK_RANGE_ROW_CNT_V000(in_range, 1)
 End Function
 
 Public Function CHECK_RANGE_SINGLE_COL_CNT_V000(in_range As Range) As Boolean
-    CHECK_RANGE_SINGLE_COL_CNT_V000 = CHECK_RANGE_COL_CNT_V000(in_range, 1)
+	CHECK_RANGE_SINGLE_COL_CNT_V000 = CHECK_RANGE_COL_CNT_V000(in_range, 1)
 End Function
 
 Public Function CHECK_RANGE_SINGLE_ROW_COL_CNT_V000(in_range As Range) As Boolean
-    CHECK_RANGE_SINGLE_COL_CNT_V000 = CHECK_RANGE_ROW_COL_CNT_V000(in_range, 1, 1)
+	CHECK_RANGE_SINGLE_COL_CNT_V000 = CHECK_RANGE_ROW_COL_CNT_V000(in_range, 1, 1)
 End Function
 
 Public Function WRAP_RANGE_CELL_VAL_TO_VARIANT_V000(in_cell As Range) As Variant
+	Dim result As Variant
+	If (CHECK_RANGE_SINGLE_ROW_COL_CNT_V000(in_cell)) Then
+		result = WRAP_CELL_VAL_TO_VARIANT_V000(in_cell)
+	Else
+		result = CVErr(xlErrNA)
+	End If
+	WRAP_RANGE_CELL_VAL_TO_VARIANT_V000 = result
+End Function
+
+Public Function WRAP_RANGE_CELL_VAL_TO_VARIANT_V001(in_cell As Range) As Variant
+	Dim result As Variant
+	If (CHECK_RANGE_SINGLE_ROW_COL_CNT_V000(in_cell)) Then
+		result = in_cell.Value2
+	Else
+		result = CVErr(xlErrNA)
+	End If
+	WRAP_RANGE_CELL_VAL_TO_VARIANT_V001 = result
+End Function
+
+Public Function PRINT_STRING_OF_RANGE_CELL_VAL_TYPENAME_V000(in_cell As Range) As String
+	Dim result As Variant
+	If (CHECK_RANGE_SINGLE_ROW_COL_CNT_V000(in_cell)) Then
+		result = TypeName(in_cell.Value2)
+	Else
+		result = CVErr(xlErrNA)
+	End If
+	PRINT_STRING_OF_RANGE_CELL_VAL_TYPENAME_V000 = result
 End Function
 
 Public Function TEMPLATE_FUNC(example As datatype) As resultdatatype
