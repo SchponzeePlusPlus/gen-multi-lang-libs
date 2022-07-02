@@ -1,3 +1,9 @@
+var GenNumVarStateV000;
+(function (GenNumVarStateV000) {
+    GenNumVarStateV000[GenNumVarStateV000["UNASSIGNED_GNVS"] = 0] = "UNASSIGNED_GNVS";
+    GenNumVarStateV000[GenNumVarStateV000["TEST_GNVS"] = 1] = "TEST_GNVS";
+})(GenNumVarStateV000 || (GenNumVarStateV000 = {}));
+
 // https://medium.com/it-developers/4-ways-to-create-a-custom-object-in-javascript-6f5e67d57500
 // define a constructor
 function defineTwoDimCartesianCoordinatesV000(x, y)
