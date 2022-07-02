@@ -2,8 +2,8 @@
 
 // ...
 
-float calcYViaLinearFuncFloatV000(float grad, float x_val, float offset)
+float calcYViaLinearFuncFloatV000(float grad, float x_val, float y_int)
 {
-	float result = ((grad * x_val) + offset);
+	float result = ((grad * x_val) + y_int);
 	return result;
 }
