@@ -103,35 +103,78 @@ Public Const ZERO_INTEGER_VAL As Integer = 0
 Public Const NULL_INTEGER_VAL As Integer = -2147483500
 '   Actual default
 Public Const DEFAULT_INTEGER_VAL As Integer = 0
-Public Const UNASSIGNED_INTEGER_VAL As Integer = 
-Public Const UNKNOWN_INTEGER_VAL As Integer = 
-Public Const UNCATEGORISED_INTEGER_VAL As Integer = 
-Public Const UNDEFINED_INTEGER_VAL As Integer = 
-Public Const ERROR_INTEGER_VAL As Integer = -32700
-Public Const ERROR_NAME_INTEGER_VAL As Integer = 
-Public Const ERROR_NUM_INTEGER_VAL As Integer = 
-Public Const ERROR_NUM_DIV_ZERO_INTEGER_VAL As Integer = 
-Public Const ERROR_NUM_UNDEFINED_INTEGER_VAL As Integer = 
-Public Const ERROR_REF_INTEGER_VAL As Integer = 
-Public Const NOT_AVAIL_INTEGER_VAL As Integer = 
-Public Const NOT_APPLICABLE_INTEGER_VAL As Integer = 
-Public Const MISC_INTEGER_VAL As Integer = 
-Public Const OTHER_INTEGER_VAL As Integer = 
-Public Const TEST_INTEGER_VAL As Integer = 
-Public Const MULTI_VAL_INTEGER_VAL As Integer = 
-Public Const ALL_VAL_INTEGER_VAL As Integer = 
-Public Const VALID_INTEGER_VAL As Integer = 
+Public Const UNASSIGNED_INTEGER_VAL As Integer = -2147483499
+Public Const UNKNOWN_INTEGER_VAL As Integer = -2147483498
+Public Const UNCATEGORISED_INTEGER_VAL As Integer = -2147483497
+Public Const UNDEFINED_INTEGER_VAL As Integer = -2147483496
+'   Public Const ERROR_INTEGER_VAL As Integer = -32700
+Public Const ERROR_INTEGER_VAL As Integer = -2147483495
+Public Const ERROR_NAME_INTEGER_VAL As Integer = -2147483494
+Public Const ERROR_NUM_INTEGER_VAL As Integer = -2147483493
+Public Const ERROR_NUM_DIV_ZERO_INTEGER_VAL As Integer = -2147483492
+Public Const ERROR_NUM_UNDEFINED_INTEGER_VAL As Integer = -2147483491
+Public Const ERROR_REF_INTEGER_VAL As Integer = -2147483490
+Public Const NOT_AVAIL_INTEGER_VAL As Integer = -2147483489
+Public Const NOT_APPLICABLE_INTEGER_VAL As Integer = -2147483488
+Public Const MISC_INTEGER_VAL As Integer = -2147483487
+Public Const OTHER_INTEGER_VAL As Integer = -2147483486
+Public Const TEST_INTEGER_VAL As Integer = -2147483485
+Public Const MULTI_VAL_INTEGER_VAL As Integer = -2147483484
+Public Const ALL_VAL_INTEGER_VAL As Integer = -2147483483
+Public Const VALID_INTEGER_VAL As Integer = -2147483482
 Public Const NEGATIVE_MAX_INTEGER_VAL As Integer = -2147483648
 Public Const NEGATIVE_INFINITY_INTEGER_VAL As Integer = -2147483647
-Public Const NEGATIVE_EPSILON_INTEGER_VAL As Integer = 
-Public Const EPSILON_INTEGER_VAL As Integer = 
+Public Const NEGATIVE_EPSILON_INTEGER_VAL As Integer = -2147483481
+Public Const EPSILON_INTEGER_VAL As Integer = -2147483480
 Public Const INFINITY_INTEGER_VAL As Integer = 2147483646
 Public Const MAX_INTEGER_VAL As Integer = 2147483647
 
 '   Now that error / exception handling "codes" have taken up specific integer values
 '   , those values shouldn't be usable for other means such as ordinary calculations or variable assignment
-Public Const USABLE_UPPER_BOUNDARY_INTEGER_VAL As Integer = 
-Public Const USABLE_LOWER_BOUNDARY_INTEGER_VAL As Integer = 
+Public Const USABLE_UPPER_BOUNDARY_INTEGER_VAL As Integer = 2147483645
+Public Const USABLE_LOWER_BOUNDARY_INTEGER_VAL As Integer = -2147483479
+
+'   Long Data Type
+'   Holds signed 64-bit (8-byte) integers ranging in value from -9223372036854775808 through 9223372036854775807 (9.2...E+18).
+'   https://docs.microsoft.com/en-us/dotnet/visual-basic/language-reference/data-types/long-data-type
+
+Public Const ZERO_LONG_VAL As Long = 0
+Public Const NULL_LONG_VAL As Long = -
+'   Actual default
+Public Const DEFAULT_LONG_VAL As Long = 0
+Public Const UNASSIGNED_LONG_VAL As Long = -
+Public Const UNKNOWN_LONG_VAL As Long = -
+Public Const UNCATEGORISED_LONG_VAL As Long = -
+Public Const UNDEFINED_LONG_VAL As Long = -
+Public Const ERROR_LONG_VAL As Long = -
+Public Const ERROR_NAME_LONG_VAL As Long = -
+Public Const ERROR_NUM_LONG_VAL As Long = -
+Public Const ERROR_NUM_DIV_ZERO_LONG_VAL As Long = -
+Public Const ERROR_NUM_UNDEFINED_LONG_VAL As Long = -
+Public Const ERROR_REF_LONG_VAL As Long = -
+Public Const NOT_AVAIL_LONG_VAL As Long = -
+Public Const NOT_APPLICABLE_LONG_VAL As Long = -
+Public Const MISC_LONG_VAL As Long = -
+Public Const OTHER_LONG_VAL As Long = -
+Public Const TEST_LONG_VAL As Long = -
+Public Const MULTI_VAL_LONG_VAL As Long = -
+Public Const ALL_VAL_LONG_VAL As Long = -
+Public Const VALID_LONG_VAL As Long = -
+Public Const NEGATIVE_MAX_LONG_VAL As Long = -9223372036854775808
+Public Const NEGATIVE_INFINITY_LONG_VAL As Long = -9223372036854775807
+Public Const NEGATIVE_EPSILON_LONG_VAL As Long = -
+Public Const EPSILON_LONG_VAL As Long = -
+Public Const INFINITY_LONG_VAL As Long = 9223372036854775806
+Public Const MAX_LONG_VAL As Long = 9223372036854775807
+
+'   Now that error / exception handling "codes" have taken up specific integer values
+'   , those values shouldn't be usable for other means such as ordinary calculations or variable assignment
+Public Const USABLE_UPPER_BOUNDARY_INTEGER_VAL As Integer = 2147483645
+Public Const USABLE_LOWER_BOUNDARY_INTEGER_VAL As Integer = -2147483479
+
+'   ULong Data Type
+
+'   Double Data Type
 
 Public Enum ExtendedBoolV000
     TRUE_EXT_BOOL
