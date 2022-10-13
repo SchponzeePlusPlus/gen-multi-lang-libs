@@ -64,6 +64,11 @@ Attribute VB_Name = "GeneralMathVBAModule"
 '
 '	Routines Called:
 
+Public Function CALC_F_VIA_LINEAR_FUNC_DOUBLE_V000(grad As Double, x_val As Double, f_int As Double)
+    '   y = m * x + c
+    CALC_F_VIA_LINEAR_FUNC_DOUBLE_V000 = (grad * x_val) + f_int
+End Function
+
 Public Function CALC_N_FACTORIAL_V000(n As Long) As Long
     Dim i As Long
     Dim result As Long

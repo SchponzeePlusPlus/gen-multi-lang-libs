@@ -8,3 +8,5 @@ float scaleAdcFloatInput(int rawAdcInput, int AdcInputBitResMax, int AdcInputBit
 	float result = ((((float) rawAdcInput) / ((float) ADCInputBitResRange)) * outputValueRange);
 	return result;
 }
+
+float scaleAdcFloatInputV001(int )
