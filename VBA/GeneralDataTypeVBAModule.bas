@@ -179,7 +179,7 @@ Public Const USABLE_LOWER_BOUNDARY_INTEGER_VAL As Integer = -32744
 '   https://docs.microsoft.com/en-us/office/vba/language/reference/user-interface-help/long-data-type
 
 Public Const ZERO_LONG_VAL As Long = 0
-Public Const TRUE_OFFICE_LONG_VAL As Long = -1
+Public Const TRUE_MS_OFFICE_LONG_VAL As Long = -1
 Public Const TRUE_LONG_VAL As Long = 1
 Public Const FALSE_LONG_VAL As Long = ZERO_LONG_VAL
 Public Const INBETWEEN_TRUE_FALSE_LONG_VAL As Long = -2147483479
@@ -267,21 +267,29 @@ Public Const TRUE_OFFICE_STRING_VAL As String = "TRUE"
 Public Const TRUE_STRING_VAL As String = TRUE_OFFICE_STRING_VAL
 Public Const FALSE_STRING_VAL As String = "FALSE"
 Public Const INBETWEEN_TRUE_FALSE_STRING_VAL As String = "(INBETWEEN TRUE & FALSE)"
+'   xlErrNull (= 2000) returns a __ error.
 Public Const NULL_STRING_VAL As String = "#NULL!"
 '   Actual default
 Public Const DEFAULT_STRING_VAL As String = "(DEFAULT)"
 Public Const UNASSIGNED_STRING_VAL As String = "(UNASSIGNED)"
 Public Const UNKNOWN_STRING_VAL As String = "(UNKNOWN)"
 Public Const UNCATEGORISED_STRING_VAL As String = "(UNCATEGORISED)"
-Public Const UNDEFINED_STRING_VAL As String = "(UNDEFIENED)"
-Public Const ERROR_STRING_VAL As String = UNDEFINED_STRING_VAL + 1#
-Public Const ERROR_NAME_STRING_VAL As String = ERROR_STRING_VAL + 1#
-Public Const ERROR_NUM_STRING_VAL As String = ERROR_NAME_STRING_VAL + 1#
-Public Const ERROR_NUM_DIV_ZERO_STRING_VAL As String = ERROR_NUM_STRING_VAL + 1#
-Public Const ERROR_NUM_UNDEFINED_STRING_VAL As String = ERROR_NUM_DIV_ZERO_STRING_VAL + 1#
-Public Const ERROR_REF_STRING_VAL As String = ERROR_NUM_UNDEFINED_STRING_VAL + 1#
+Public Const UNDEFINED_STRING_VAL As String = "(UNDEFINED)"
+'   xlErrValue (= 2015) returns a #VALUE! error. (NOT USED)
+Public Const ERROR_STRING_VAL As String = "(ERROR)"
+'   xlErrName (= 2029) returns a __ error.
+Public Const ERROR_NAME_STRING_VAL As String = "#NAME?"
+'   xlErrNum (= 2036) returns a __ error.
+Public Const ERROR_NUM_STRING_VAL As String = "#NUM!"
+'   xlErrDiv0 (= 2007) returns a __ error.
+Public Const ERROR_NUM_DIV_ZERO_STRING_VAL As String = "#DIV/0!"
+Public Const ERROR_NUM_UNDEFINED_STRING_VAL As String = "(ERROR_NUM_UNDEF)"
+'   xlErrRef (= 2023) returns a __ error.
+Public Const ERROR_REF_STRING_VAL As String = "#REF!"
+'   xlErrNA (= 2042) returns a __ error.
 Public Const NOT_AVAIL_STRING_VAL As String = "#N/A"
-Public Const NOT_APPLICABLE_STRING_VAL As String = NOT_AVAIL_STRING_VAL + 1#
+Public Const NOT_APPLICABLE_STRING_VAL As String = "(NOT_APPLICABLE)"
+'   Need to finish defining string values...
 Public Const MISC_STRING_VAL As String = NOT_APPLICABLE_STRING_VAL + 1#
 Public Const OTHER_STRING_VAL As String = MISC_STRING_VAL + 1#
 Public Const TEST_STRING_VAL As String = OTHER_STRING_VAL + 1#
@@ -296,7 +304,7 @@ Public Const INFINITY_STRING_VAL As String = MAX_STRING_VAL - 1#
 Public Const MAX_STRING_VAL As String = 1.79769313486232E308#
 
 Public Enum ExtendedBoolV000
-    TRUE_EXT_BOOL = TRUE_OFFICE_LONG_VAL
+    TRUE_EXT_BOOL = TRUE_MS_OFFICE_LONG_VAL
     FALSE_EXT_BOOL = FALSE_LONG_VAL
     INBETWEEN_T_F_EXT_BOOL = INBETWEEN_TRUE_FALSE_LONG_VAL
     NULL_EXT_BOOL = NULL_LONG_VAL
@@ -306,6 +314,7 @@ Public Enum ExtendedBoolV000
     UNKNOWN_EXT_BOOL = UNKNOWN_LONG_VAL
 End Enum
 
+'   E(xtended ?) E(rror / xception ?) H(andling ?) Long Data Type
 Public Type EEHLongV000
     gnvs As Byte
     val As Long
@@ -314,3 +323,5 @@ End Type
 Public Function PRINT_STRING_OF_VARIANT_TYPENAME_V000(var As Variant) As String
 	PRINT_STRING_OF_VARIANT_TYPENAME_V000 = TypeName(var)
 End Function
+
+'   Need to enter cast functions
