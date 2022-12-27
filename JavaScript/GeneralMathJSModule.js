@@ -56,6 +56,7 @@ function defineQuadraticEqXIntsV000(xOne, xTwo)
 }
 
 // ported from VBA function
+// n! = n * (n - 1) * (n -2) * ... * 1
 function calcNFactorialV000(n)
 {
 	let i = 0;
@@ -64,7 +65,7 @@ function calcNFactorialV000(n)
     //	0! = 1
     //	https://www.cuemath.com/numbers/factorial/
     result = 1;
-    for (i = 0; i < n; i++)
+    for (i = 1; i <= n; i++)
 	{
 		result = result * i;
 	}
