@@ -1,3 +1,5 @@
+//	GeneralMathJSModule.js
+
 var GenNumVarStateV000;
 (function (GenNumVarStateV000) {
     GenNumVarStateV000[GenNumVarStateV000["UNASSIGNED_GNVS"] = 0] = "UNASSIGNED_GNVS";
@@ -51,6 +53,23 @@ function defineQuadraticEqXIntsV000(xOne, xTwo)
 {
 	this.xOne = xOne;
 	this.xTwo = xTwo;
+}
+
+// ported from VBA function
+function calcNFactorialV000(n)
+{
+	let i = 0;
+    let result = 0;
+
+    //	0! = 1
+    //	https://www.cuemath.com/numbers/factorial/
+    result = 1;
+    for (i = 0; i < n; i++)
+	{
+		result = result * i;
+	}
+
+    return result;
 }
 
 function calcYViaLinearFuncV000(grad, xVal, yInt)
