@@ -1,5 +1,14 @@
 //  GeneralMathProbJSModule.js
 
+var EventProbabilityStateV000;
+(function (EventProbabilityStateV000) {
+    EventProbabilityStateV000[EventProbabilityStateV000["MUTUALLY_EXCLUSIVE_EPS"] = 0] = "MUTUALLY_EXCLUSIVE_EPS";
+    EventProbabilityStateV000[EventProbabilityStateV000["INDEPENDENT_EPS"] = 1] = "INDEPENDENT_EPS";
+})(EventProbabilityStateV000 || (EventProbabilityStateV000 = {}));
+
+const MUTUALLY_EXCLUSIVE_EPS_STRING_VAL = "MUTUALLY_EXCLUSIVE";
+const INDEPENDENT_EPS_STRING_VAL = "INDEPENDENT";
+
 //  Coursera Kennesaw State University Six Sigma Green Belt Specialisation (SSGBSpec) Course 02: Adavanced Define and Measure Phases (ADMP)
 //  Week 04, Video 2 - Central Limit Theorem
 //  sigma ^ 2 = sigma_x-bar ^ 2 = sigma_x ^ 2 / n
