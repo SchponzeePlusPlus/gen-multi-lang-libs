@@ -4,10 +4,34 @@ var EventProbabilityStateV000;
 (function (EventProbabilityStateV000) {
     EventProbabilityStateV000[EventProbabilityStateV000["MUTUALLY_EXCLUSIVE_EPS"] = 0] = "MUTUALLY_EXCLUSIVE_EPS";
     EventProbabilityStateV000[EventProbabilityStateV000["INDEPENDENT_EPS"] = 1] = "INDEPENDENT_EPS";
+    EventProbabilityStateV000[EventProbabilityStateV000["NULL_EPS"] = 2] = "NULL_EPS";
 })(EventProbabilityStateV000 || (EventProbabilityStateV000 = {}));
+
+const EventProbabilityStateV001 = Object.freeze
+({
+    NULL_EPS: Symbol(0),
+    MUTUALLY_EXCLUSIVE_EPS: Symbol(1),
+    INDEPENDENT_EPS: Symbol(2)
+})
 
 const MUTUALLY_EXCLUSIVE_EPS_STRING_VAL = "MUTUALLY_EXCLUSIVE";
 const INDEPENDENT_EPS_STRING_VAL = "INDEPENDENT";
+
+function assignEventProbabilityStateV000EnumFromStringV000(input_str)
+{
+    let result = EventProbabilityStateV001.NULL_EPS;
+    switch(input_str)
+    {
+        case MUTUALLY_EXCLUSIVE_EPS_STRING_VAL:
+            result = EventProbabilityStateV001.MUTUALLY_EXCLUSIVE_EPS;
+        case INDEPENDENT_EPS_STRING_VAL:
+            result = EventProbabilityStateV001.INDEPENDENT_EPS;
+        default:
+            result = EventProbabilityStateV001.NULL_EPS;
+    }
+
+    return result;
+}
 
 //  Coursera Kennesaw State University Six Sigma Green Belt Specialisation (SSGBSpec) Course 02: Adavanced Define and Measure Phases (ADMP)
 //  Week 04, Video 2 - Central Limit Theorem
