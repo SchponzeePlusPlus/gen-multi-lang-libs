@@ -67,9 +67,19 @@ function addProbEventsIndependentViaPaPbPanbEpsV000(prob_a, prob_b, prob_a_and_b
     return result;
 }
 
+//  PLEASE NOTE THAT THIS FUNCTION CURRENTLY DOES NOT WORK IN A GAScript for a Google Sheet (https://docs.google.com/spreadsheets/d/1jWfozhzJdyaWn_0ZAY6LvFL4bO2ue-QeE8RuyQ09Zq0/edit#gid=0) - PLEASE TROUBLESHOOT FIRST
 function addProbEventsIndependentViaPaPbPanbEpsstrV000(prob_a, prob_b, prob_a_and_b, eps_str)
 {
     return addProbEventsIndependentViaPaPbPanbEpsV000(prob_a, prob_b, prob_a_and_b, assignEventProbabilityStateV000EnumFromStringV000(eps_str));
+}
+
+//  Coursera Kennesaw State University Six Sigma Green Belt Specialisation (SSGBSpec) Course 02: Adavanced Define and Measure Phases (ADMP)
+//  Week 03, Video x - Conditional Probability
+//  Formula for probabiity of event B when event A has occured:
+//  P(B | A) = P(A&B) + P(A)
+function calcConditionalProbEventViaPanbPbV000(prob_a_and_b, prob_a)
+{
+    return (prob_a_and_b / prob_a);
 }
 
 //  Coursera Kennesaw State University Six Sigma Green Belt Specialisation (SSGBSpec) Course 02: Adavanced Define and Measure Phases (ADMP)
