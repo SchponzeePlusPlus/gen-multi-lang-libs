@@ -14,6 +14,7 @@ const EventProbabilityStateV001 = Object.freeze
     INDEPENDENT_EPS: Symbol(2)
 })
 
+// mutually exclusive, aka disjoint events
 const MUTUALLY_EXCLUSIVE_EPS_STRING_VAL = "MUTUALLY_EXCLUSIVE";
 const INDEPENDENT_EPS_STRING_VAL = "INDEPENDENT";
 
@@ -31,6 +32,44 @@ function assignEventProbabilityStateV000EnumFromStringV000(input_str)
     }
 
     return result;
+}
+
+//  Coursera Kennesaw State University Six Sigma Green Belt Specialisation (SSGBSpec) Course 02: Adavanced Define and Measure Phases (ADMP)
+//  Week 03, Video x - Addition Rules for Probability
+// P(A u B) = P(A) + P(B)
+function addProbEventsMutExclusViaPaPbV000(prob_a, prob_b)
+{
+    return (prob_a + prob_b);
+}
+
+//  Coursera Kennesaw State University Six Sigma Green Belt Specialisation (SSGBSpec) Course 02: Adavanced Define and Measure Phases (ADMP)
+//  Week 03, Video x - Addition Rules for Probability
+// P(A u B) = P(A) + P(B) - P(A&B)
+function addProbEventsIndependentViaPaPbPanbV000(prob_a, prob_b, prob_a_and_b)
+{
+    return (prob_a + prob_b - prob_a_and_b);
+}
+
+function addProbEventsIndependentViaPaPbPanbEpsV000(prob_a, prob_b, prob_a_and_b, eps)
+{
+    let result = 0;
+
+    switch(eps)
+    {
+        case EventProbabilityStateV001.MUTUALLY_EXCLUSIVE_EPS:
+            result = addProbEventsMutExclusViaPaPbV000(prob_a, prob_b);
+        case EventProbabilityStateV001.INDEPENDENT_EPS:
+            result = addProbEventsIndependentViaPaPbPanbV000(prob_a, prob_b, prob_a_and_b);
+        default:
+            result = 0;
+    }
+
+    return result;
+}
+
+function addProbEventsIndependentViaPaPbPanbEpsstrV000(prob_a, prob_b, prob_a_and_b, eps_str)
+{
+    return addProbEventsIndependentViaPaPbPanbEpsV000(prob_a, prob_b, prob_a_and_b, assignEventProbabilityStateV000EnumFromStringV000(eps_str));
 }
 
 //  Coursera Kennesaw State University Six Sigma Green Belt Specialisation (SSGBSpec) Course 02: Adavanced Define and Measure Phases (ADMP)
