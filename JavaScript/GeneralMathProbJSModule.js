@@ -83,6 +83,24 @@ function calcConditionalProbEventViaPanbPbV000(prob_a_and_b, prob_a)
 }
 
 //  Coursera Kennesaw State University Six Sigma Green Belt Specialisation (SSGBSpec) Course 02: Adavanced Define and Measure Phases (ADMP)
+//  Week 03, Video x - Multiplicative Rules
+//  Special Multiplication Rule (Independent Events)
+//  P(A n B) = P(A) * P(B)
+function multiplyProbEventsIndependentViaPaPbV000(prob_a, prob_b)
+{
+    return (prob_a * prob_b);
+}
+
+//  Coursera Kennesaw State University Six Sigma Green Belt Specialisation (SSGBSpec) Course 02: Adavanced Define and Measure Phases (ADMP)
+//  Week 03, Video x - Multiplicative Rules
+//  General Multiplication Rule (Mutually Exclusive Events)
+//  P(A n B) = P(A) * P(B | A)
+function multiplyProbEventsMutExclusViaPaPbaV000(prob_a, cond_prob_b_after_a)
+{
+    return (prob_a * cond_prob_b_after_a);
+}
+
+//  Coursera Kennesaw State University Six Sigma Green Belt Specialisation (SSGBSpec) Course 02: Adavanced Define and Measure Phases (ADMP)
 //  Week 04, Video 2 - Central Limit Theorem
 //  sigma ^ 2 = sigma_x-bar ^ 2 = sigma_x ^ 2 / n
 function calcVarianceViaSigmaxNV000(sigma_x, n)
