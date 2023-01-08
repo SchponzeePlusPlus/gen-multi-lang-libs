@@ -148,4 +148,10 @@ function calcStdErrOTMeanViaSigmaNV000(sigma, n)
 //	MTH20004: Maths 3
 //	Student Notes Pg. 198
 //  Probability Density Function
-//	function() ...
+//	f(x) = (1 / (sigma * sqrt(2 * Pi))) * e ^ (-(1 / 2) * ((x - mu) / sigma) ^ 2)
+//	-ve inf < x < +ve inf
+// doesnt work properly?!!
+function calcProbDensityFuncContRvViaSigmaMuXV000(mean, std_dev, x)
+{
+	return ((1 / (std_dev * (2 * Math.PI) ^ (1 / 2))) * Math.exp(-(1 / 2) * ((x - mean) / std_dev) ^ 2));
+}
