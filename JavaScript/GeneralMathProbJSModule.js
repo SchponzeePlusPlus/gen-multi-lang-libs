@@ -164,21 +164,44 @@ function calcProbDensityFuncContRvViaSigmaMuXV000(mean, std_dev, x)
 // function to work out area under graph; ugly method ?
 function calcProbNormDistrRangeViaMuSigmaMinxMaxxV000(mean, std_dev, min_x, max_x)
 {
-	let integration_smpling_intrvl = Number.MIN_VALUE;
+	// let integration_smpling_intrvl = Number.MIN_VALUE;
+	//	let integration_smpling_intrvl = 1.0;
+	let integration_smpling_intrvl = 0.001;
 	let i = 0;
 	let x = 0;
 	let range_x = 0;
 	let integration_cnt_lim = 0;
 	let result = 0;
+	let prob_density_x = 0;;
+	let prob_density_x_prev = 0;
 
 	range_x = max_x - min_x;
-	integration_cnt_lim = range_x / integration_smpling_intrvl;
+	integration_cnt_lim = Math.round(range_x / integration_smpling_intrvl);
 
+	/* 
 	x = min_x;
+	
 	for (i = 0; i < integration_cnt_lim; i++)
 	{
 		result += calcProbDensityFuncContRvViaSigmaMuXV000(mean, std_dev, x);
-		x += Number.MIN_VALUE;
+		x += integration_smpling_intrvl;
+	}
+	*/
+
+	x = min_x;
+	
+	prob_density_x_prev = calcProbDensityFuncContRvViaSigmaMuXV000(mean, std_dev, x);
+
+	x += integration_smpling_intrvl;
+
+	for (i = 1; i < integration_cnt_lim; i++)
+	{
+		prob_density_x = calcProbDensityFuncContRvViaSigmaMuXV000(mean, std_dev, x);
+		
+		result += (calcMinValBetweenTwoValsV000(prob_density_x, prob_density_x_prev) * integration_smpling_intrvl) + ((1 / 2) * integration_smpling_intrvl * Math.abs(prob_density_x - prob_density_x_prev));
+
+		x += integration_smpling_intrvl;
+		prob_density_x_prev = prob_density_x;
 	}
 
 	return result;
