@@ -105,7 +105,7 @@ function multiplyProbEventsMutExclusViaPaPbaV000(prob_a, cond_prob_b_after_a)
 //  sigma ^ 2 = sigma_x-bar ^ 2 = sigma_x ^ 2 / n
 function calcVarianceViaSigmaxNV000(sigma_x, n)
 {
-	return (sigma_x ^ 2 / n);
+	return (sigma_x ** 2 / n);
 }
 
 //  Coursera Kennesaw State University Six Sigma Green Belt Specialisation (SSGBSpec) Course 02: Adavanced Define and Measure Phases (ADMP)
@@ -113,7 +113,7 @@ function calcVarianceViaSigmaxNV000(sigma_x, n)
 //  Standard Deviation: sigma = sigma_x-bar = sigma_x / sqrt(n)
 function calcStdDevViaSigmaxNV000(sigma_x, n)
 {
-	return (sigma_x / (n ^ (1 / 2)));
+	return (sigma_x / (n ** (1 / 2)));
 }
 
 //  Coursera Kennesaw State University Six Sigma Green Belt Specialisation (SSGBSpec) Course 02: Adavanced Define and Measure Phases (ADMP)
@@ -135,9 +135,11 @@ function calcCombinationsViaNRV000(n_obj_sets, r_objs)
 //  Coursera Kennesaw State University Six Sigma Green Belt Specialisation (SSGBSpec) Course 02: Adavanced Define and Measure Phases (ADMP)
 //  Week 04, Video 3 - Central Limit Theorem Applications
 //  Standard Error of the mean (aka Std Deviation of the mean) = sigma / sqrt(n)
-function calcStdErrOTMeanViaSigmaNV000(sigma, n)
+//	@param ppltn_std_dev Population parameter: standard deviation => sigma
+//	@param smpl_n Sample parameter: Sample Size n => n
+function calcStdErrOTMeanViaSigmaNV000(ppltn_std_dev, smpl_n)
 {
-	return (sigma / (n ^ (1 / 2)));
+	return (ppltn_std_dev / (smpl_n ** (1 / 2)));
 }
 
 //  Coursera Kennesaw State University Six Sigma Green Belt Specialisation (SSGBSpec) Course 02: Adavanced Define and Measure Phases (ADMP)
@@ -148,10 +150,36 @@ function calcStdErrOTMeanViaSigmaNV000(sigma, n)
 //	MTH20004: Maths 3
 //	Student Notes Pg. 198
 //  Probability Density Function
+//	Normal Distribution ??
 //	f(x) = (1 / (sigma * sqrt(2 * Pi))) * e ^ (-(1 / 2) * ((x - mu) / sigma) ^ 2)
 //	-ve inf < x < +ve inf
 // doesnt work properly?!!
+// might have excessive brackets - could remove some in future
 function calcProbDensityFuncContRvViaSigmaMuXV000(mean, std_dev, x)
 {
-	return ((1 / (std_dev * (2 * Math.PI) ^ (1 / 2))) * Math.exp(-(1 / 2) * ((x - mean) / std_dev) ^ 2));
+	return ((1.0 / (std_dev * ((2.0 * Math.PI) ** (1.0 / 2.0)))) * Math.exp(-1.0 * (1.0 / 2.0) * (((x - mean) / std_dev) ** (2.0))));
+}
+
+// Probability between range of values of normal distribution
+// function to work out area under graph; ugly method ?
+function calcProbNormDistrRangeViaMuSigmaMinxMaxxV000(mean, std_dev, min_x, max_x)
+{
+	let integration_smpling_intrvl = Number.MIN_VALUE;
+	let i = 0;
+	let x = 0;
+	let range_x = 0;
+	let integration_cnt_lim = 0;
+	let result = 0;
+
+	range_x = max_x - min_x;
+	integration_cnt_lim = range_x / integration_smpling_intrvl;
+
+	x = min_x;
+	for (i = 0; i < integration_cnt_lim; i++)
+	{
+		result += calcProbDensityFuncContRvViaSigmaMuXV000(mean, std_dev, x);
+		x += Number.MIN_VALUE;
+	}
+
+	return result;
 }
