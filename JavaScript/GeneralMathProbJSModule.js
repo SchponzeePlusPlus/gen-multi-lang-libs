@@ -147,6 +147,42 @@ function calcStdErrOTMeanViaSigmaNV000(ppltn_std_dev, smpl_n)
 //  Confidence Intervals
 //	...
 
+//  Coursera Kennesaw State University Six Sigma Green Belt Specialisation (SSGBSpec) Course 02: Adavanced Define and Measure Phases (ADMP)
+//  Week 05 (Statistical Distributions), Video x - Binomial Distribution Calculations
+//  Binomial Formula
+//	@brief
+//	P(x) = ((n!) / (x! * ((n - x)!))) * p ^ (x) * (1 - p) ^ (n - x)
+//	@param
+//	@return
+function calcBinomialFormulaViaNumsuccNumtrialProbSuccV000(num_success, num_trials, prob_success)
+{
+	return (((calcNFactorialV000(num_trials)) / (calcNFactorialV000(num_success) * (calcNFactorialV000(num_trials - num_success)))) * prob_success ** (num_success) * (1 - prob_success) ** (num_trials - num_success));
+}
+
+//  Coursera Kennesaw State University Six Sigma Green Belt Specialisation (SSGBSpec) Course 02: Adavanced Define and Measure Phases (ADMP)
+//  Week 05 (Statistical Distributions), Video x - 
+//  Rate for the problem
+//	@brief
+//	Lambda = n * p
+//	@param
+//	@return
+function calcProblemRateViaNumsuccNumtrialV000(num_success, num_trials)
+{
+	return (num_success * num_trials);
+}
+
+//  Coursera Kennesaw State University Six Sigma Green Belt Specialisation (SSGBSpec) Course 02: Adavanced Define and Measure Phases (ADMP)
+//  Week 05 (Statistical Distributions), Video x - 
+//  Poisson Formula
+//	@brief
+//	P(x) = ((e ^ (-lambda) * lambda ^ (x)) / (x!))
+//	@param
+//	@return
+function calcPoissonFormulaViaNumsuccProblemrateV000(num_success, problem_rate)
+{
+	return ((Math.exp(-1.0 * problem_rate) * problem_rate ** (num_success)) / (calcNFactorialV000(num_success)));
+}
+
 //	MTH20004: Maths 3
 //	Student Notes Pg. 198
 //  Probability Density Function
@@ -158,6 +194,18 @@ function calcStdErrOTMeanViaSigmaNV000(ppltn_std_dev, smpl_n)
 function calcProbDensityFuncContRvViaSigmaMuXV000(mean, std_dev, x)
 {
 	return ((1.0 / (std_dev * ((2.0 * Math.PI) ** (1.0 / 2.0)))) * Math.exp(-1.0 * (1.0 / 2.0) * (((x - mean) / std_dev) ** (2.0))));
+}
+
+//  Coursera Kennesaw State University Six Sigma Green Belt Specialisation (SSGBSpec) Course 02: Adavanced Define and Measure Phases (ADMP)
+//  Week 05 (Statistical Distributions), Video x - 
+//  Z-Score
+//	@brief
+//	Z = (x - mu) / sigma
+//	@param
+//	@return
+function calcZScoreViaXMeanStddevV000(x, mean, std_dev)
+{
+	return ((x - mean) / std_dev);
 }
 
 // Probability between range of values of normal distribution
@@ -205,4 +253,16 @@ function calcProbNormDistrRangeViaMuSigmaMinxMaxxV000(mean, std_dev, min_x, max_
 	}
 
 	return result;
+}
+
+//  Coursera Kennesaw State University Six Sigma Green Belt Specialisation (SSGBSpec) Course 02: Adavanced Define and Measure Phases (ADMP)
+//  Week 05 (Statistical Distributions), Video x - 
+//  t-distribution
+//	@brief
+// t = (x) / sqrt(y / k)
+//	@param k Degrees of Freedom
+//	@return
+function calcTDistributionViaRvndRvcsDofV000(random_var_norm_dist, random_var_chi_sqr_dist, dof)
+{
+	return ((random_var_norm_dist) / ((random_var_chi_sqr_dist / dof) ** (1 / 2)));
 }
