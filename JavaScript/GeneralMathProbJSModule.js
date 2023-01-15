@@ -220,7 +220,7 @@ function calcProbNormDistrRangeViaMuSigmaMinxMaxxV000(mean, std_dev, min_x, max_
 	let range_x = 0;
 	let integration_cnt_lim = 0;
 	let result = 0;
-	let prob_density_x = 0;;
+	let prob_density_x = 0;
 	let prob_density_x_prev = 0;
 
 	range_x = max_x - min_x;
