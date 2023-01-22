@@ -266,3 +266,15 @@ function calcTDistributionViaRvndRvcsDofV000(random_var_norm_dist, random_var_ch
 {
 	return ((random_var_norm_dist) / ((random_var_chi_sqr_dist / dof) ** (1 / 2)));
 }
+
+//  Coursera Kennesaw State University Six Sigma Green Belt Specialisation (SSGBSpec) Course 02: Adavanced Define and Measure Phases (ADMP)
+//  Week 06 (Statistical Distributions), Part 1 - Yellow Belt Refresher Area, Video 2 - Basic Statistics Part 02
+//  Sample Standard Deviation
+//	@brief
+//	SD = sqrt(Σ(x - x_bar) / (N - 1))
+//	@param
+//	@return
+function calcSmplStdDevViaXXbarNV000()
+{
+	return (sqrt(Σ(x - x_bar) / (N - 1)));
+}
