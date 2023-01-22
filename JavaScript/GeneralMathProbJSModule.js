@@ -285,9 +285,9 @@ function calcSmplStdDevViaXXbarNV000(observances_num, ...observances_arr, ...mea
 	{
 		for (i = 0; i < observances_arr.length; i++)
 		{
-			calc_var_sum_observs_min_means += 0;
+			calc_var_sum_observs_min_means += (observances_arr[i] - means_arr[i]);
 		}
-		result = (sqrt(Σ(x - x_bar) / (N - 1)));
+		result = (((calc_var_sum_observs_min_means) / (observances_num - 1)) ** (1 / 2));
 	}
 	//	error
 	else
