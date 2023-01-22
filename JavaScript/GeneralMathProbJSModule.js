@@ -272,9 +272,28 @@ function calcTDistributionViaRvndRvcsDofV000(random_var_norm_dist, random_var_ch
 //  Sample Standard Deviation
 //	@brief
 //	SD = sqrt(Σ(x - x_bar) / (N - 1))
-//	@param
+//	@param observances_arr => x
+//	@param means_arr => x_bar
+//	@param observances_num => N
 //	@return
-function calcSmplStdDevViaXXbarNV000()
+function calcSmplStdDevViaXXbarNV000(observances_num, ...observances_arr, ...means_arr)
 {
-	return (sqrt(Σ(x - x_bar) / (N - 1)));
+	let result = 0;
+	let calc_var_sum_observs_min_means = 0;
+
+	if (observances_arr.length == means_arr.length)
+	{
+		for (i = 0; i < observances_arr.length; i++)
+		{
+			calc_var_sum_observs_min_means += 0;
+		}
+		result = (sqrt(Σ(x - x_bar) / (N - 1)));
+	}
+	//	error
+	else
+	{
+		result = 0;
+	}
+
+	return result;
 }
