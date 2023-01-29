@@ -176,11 +176,54 @@ function calcCapbIndexViaZuZlV000(tol_rnge, est_std_dev)
 }
 
 //  Coursera Kennesaw State University Six Sigma Green Belt Specialisation (SSGBSpec) Course 02: Adavanced Define and Measure Phases (ADMP)
-//  Week 07 (Process and Performance Capability & Exploratory Data Analysis), Part 1 - Process and Performance Capability, Video 3 - Analyzing
-//		Process Capability
+//  Week 07 (Process and Performance Capability & Exploratory Data Analysis), Part 2 - Exploratory Data Anlaysis, Video 3 - Correlation
 //	@brief
 //	<math equation>
+//	PLEASE UPDATE THE NAMING CONVENTIONS (BASED ON VBA LINEAR INTERPOLATION / EXTRAPOLATION WORK) IN THIS FORMULA WHEN POSSIBLE
 //	@param =>
 //	@param =>
 //	@param =>
 //	@return <function title or result> =>
+function calcCorrelCoeffViaXdataarrYdataarrV000(x_data_arr, y_data_arr)
+{
+	let x_data_avg = 0;
+	let y_data_avg = 0;
+	let x_data_std_dev = 0;
+	let y_data_std_dev = 0;
+	let i = 0;
+	let x_min_x_avg_arr = new Array();
+	let y_min_y_avg_arr = new Array();
+	let prod_of_diffs_x_y_avgs_arr = new Array();
+	let sum_prod_of_diffs_x_y_avgs_arr = 0;
+	let result = 0;
+
+	//	X and Y array arguments need to be the same length
+	if (x_data_arr.length == y_data_arr.length)
+	{
+		x_data_avg = calcAverageValViaValsarrV001(x_data_arr);
+		y_data_avg = calcAverageValViaValsarrV001(y_data_arr);
+		x_data_std_dev = calcStdDevViaSigmaxNV000(x_data_avg, x_data_arr.length);
+		y_data_std_dev = calcStdDevViaSigmaxNV000(y_data_avg, y_data_arr.length);
+
+		x_min_x_avg_arr = new Array(x_data_arr.length).fill(0);
+		y_min_y_avg_arr = new Array(y_data_arr.length).fill(0);
+		prod_of_diffs_x_y_avgs_arr = new Array(x_data_arr.length).fill(0);
+
+		for(i = 0; i < x_data_arr.length; i++)
+		{
+			x_min_x_avg_arr[i] = x_data_arr[i] - x_data_avg;
+			y_min_y_avg_arr[i] = y_data_arr[i] - y_data_avg;
+			prod_of_diffs_x_y_avgs_arr[i] = x_min_x_avg_arr[i] * y_min_y_avg_arr[i];
+		}
+
+		result = ((sumValsViaValsarrV000(prod_of_diffs_x_y_avgs_arr) / (x_data_std_dev * y_data_std_dev)) / (x_data_arr.length - 1));
+
+	}
+	//	otherwise an error is to occur
+	else
+	{
+		result = 0;
+	}
+
+	return result;
+}
