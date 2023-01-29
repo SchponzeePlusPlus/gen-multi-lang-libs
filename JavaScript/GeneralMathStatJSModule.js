@@ -1,6 +1,6 @@
 //	GeneralMathStatJSModule.js
 
-function calcAverageValViaValsarrV000(...vals_arr)
+function calcAverageValViaValsarrV000(vals_arr)
 {
 	let vals_arr_sum = 0;
 	let i = 0;
