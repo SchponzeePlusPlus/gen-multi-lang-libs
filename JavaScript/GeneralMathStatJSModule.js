@@ -122,6 +122,34 @@ function calcEstStdDevViaRngeavgDtwoV000(rnge_avg, ctrl_lim_const_D_two)
 //  Week 07 (Process and Performance Capability & Exploratory Data Analysis), Part 1 - Process and Performance Capability, Video 3 - Analyzing
 //		Process Capability
 //	@brief
+//	Z_U = (USL - X_double-bar) / σ_circumflex
+//	@param =>
+//	@param =>
+//	@param =>
+//	@return <function title or result> =>
+function calcZuViaUslGrandavgEststddevV000(upper_spec_lim, grand_avg, est_std_dev)
+{
+	return ((upper_spec_lim - grand_avg) / est_std_dev);
+}
+
+//  Coursera Kennesaw State University Six Sigma Green Belt Specialisation (SSGBSpec) Course 02: Adavanced Define and Measure Phases (ADMP)
+//  Week 07 (Process and Performance Capability & Exploratory Data Analysis), Part 1 - Process and Performance Capability, Video 3 - Analyzing
+//		Process Capability
+//	@brief
+//	Z_L = (X_double-bar - LSL) / σ_circumflex
+//	@param =>
+//	@param =>
+//	@param =>
+//	@return <function title or result> =>
+function calcZlViaLslGrandavgEststddevV000(lower_spec_lim, grand_avg, est_std_dev)
+{
+	return ((grand_avg - lower_spec_lim) / est_std_dev);
+}
+
+//  Coursera Kennesaw State University Six Sigma Green Belt Specialisation (SSGBSpec) Course 02: Adavanced Define and Measure Phases (ADMP)
+//  Week 07 (Process and Performance Capability & Exploratory Data Analysis), Part 1 - Process and Performance Capability, Video 3 - Analyzing
+//		Process Capability
+//	@brief
 //	C_pk = Min(Z_U, Z_L) / 3
 //	@param Z_U aka std_devs_between_proc_avg_and_usl : number of standard deviations between the process average and the upper specification
 //		limit => Z_U
