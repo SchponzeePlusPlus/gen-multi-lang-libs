@@ -55,6 +55,19 @@ function defineQuadraticEqXIntsV000(xOne, xTwo)
 	this.xTwo = xTwo;
 }
 
+function sumValsViaValsarrV000(vals_arr)
+{
+	let i = 0;
+	let result = 0;
+
+	for (i = 0; i < vals_arr.length; i++)
+	{
+		result += vals_arr[i];
+	}
+
+	return result;
+}
+
 // ported from VBA function
 // n! = n * (n - 1) * (n -2) * ... * 1
 function calcNFactorialV000(n)

@@ -12,3 +12,8 @@ function calcAverageValViaValsarrV000(vals_arr)
 
 	return (vals_arr_sum / vals_arr.length);
 }
+
+function calcAverageValViaValsarrV001(vals_arr)
+{
+	return (sumValsViaValsarrV000(vals_arr) / vals_arr.length);
+}
