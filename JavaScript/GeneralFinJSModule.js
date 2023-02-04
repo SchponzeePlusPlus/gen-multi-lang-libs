@@ -1,3 +1,17 @@
+//  Swinburne University of Technology: Bachelor of Business (Finance) [BB-EngBus]: Financial Management Unit of Study (FIN20014)
+//  Week xx: 
+//	@brief
+//	<math equation>
+//	PLEASE UPDATE THE NAMING CONVENTIONS (BASED ON VBA LINEAR INTERPOLATION / EXTRAPOLATION WORK) IN THIS FORMULA WHEN POSSIBLE
+//	@param =>
+//	@param =>
+//	@param =>
+//	@return <function title or result> =>
+function calcFutureValLumpSumViaPresvallsIntPerV000(pres_val_lump_sum, rate_interest, period)
+{
+	return (pres_val_lump_sum * ((1.0 + rate_interest) ** (period)));
+}
+
 //	@param in_np Net Profit; financial gain
 //	@param in_ti Total Investment;
 //	Return on Investment (ROI) [%]
