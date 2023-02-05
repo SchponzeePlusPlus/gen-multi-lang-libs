@@ -86,6 +86,13 @@ function calcNFactorialV000(n)
     return result;
 }
 
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/log
+function calcLogViaBaseV000(log_base, num)
+{
+	// Math.log(num) will return "natural logarithm (base e) of a number"
+	return (Math.log(num) / Math.log(log_base));
+}
+
 function calcYViaLinearFuncV000(grad, xVal, yInt)
 {
 	return ((grad * xVal) + yInt);
