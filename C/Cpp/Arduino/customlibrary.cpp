@@ -1,4 +1,13 @@
 /*
+	Code Reference Citation 
+	Title: <title of program/source code>
+	Author: <author(s) names>
+	Date: <date>
+	Code version: <code version>
+	Availability: <where it's located>
+*/
+
+/*
 	Program: Solar Mobility System (Concept 0 Version 0) Panel Control Program (Revision 0) (.INO/C++)
 	Module: Custom Library
 	Authors: Team SLK - Nicholas Kazanidis (101097401), Kayla Lai (100588247), Leonard Sponza (100588917)
