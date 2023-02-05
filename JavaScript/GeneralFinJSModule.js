@@ -13,6 +13,40 @@
 
 //  Swinburne University of Technology: Bachelor of Business (Finance) [BB-EngBus]: Financial Management Unit of Study (FIN20014)
 //  Week 2: Topic 2A - Time Value of Money
+//	Ross, SA, Jordan, BD &amp; Westerfield, R 2010, Fundamentals of Corporate Finance, 9th ed, McGraw-Hill Irwin, Boston.
+//	ISBN 978-0-07-338239-5 (standard edition)
+//	pg. 138
+//	@brief
+//	FVF = (1 + i) ^ t
+//	@param =>
+//	@param rate_interest: Interest rate of same time period to period parameter; Unit of Measurement is a Factor to 1 (0.01 interest rate factor = 1 % interest rate) => i
+//	@param periods_num: number of periods; unspecified time intervals that have elapsed; period intervals must match interest rate time period parameter => t
+//	@return Future Value Factor => FVF
+function calcFutureValFactorCompoundIRViaIntPerV000(rate_interest, periods_num)
+{
+	return ((1.0 + rate_interest) ** (periods_num));
+}
+
+//  Swinburne University of Technology: Bachelor of Business (Finance) [BB-EngBus]: Financial Management Unit of Study (FIN20014)
+//  Week 2: Topic 2A - Time Value of Money
+//	Ross, SA, Jordan, BD &amp; Westerfield, R 2010, Fundamentals of Corporate Finance, 9th ed, McGraw-Hill Irwin, Boston.
+//	ISBN 978-0-07-338239-5 (standard edition)
+//	pg. 138
+//	@brief
+//	FVF = (1 + i) ^ t
+//	@param =>
+//	@param rate_interest: Interest rate of same time period to period parameter; Unit of Measurement is a Factor to 1 (0.01 interest rate factor = 1 % interest rate) => i
+//	@param periods_num: number of periods; unspecified time intervals that have elapsed; period intervals must match interest rate time period parameter => t
+//	@return Future Value Factor => FVF
+function calcPresentValFactorCompoundIRViaIntPerV000(rate_interest, periods_num)
+{
+	// return (1.0 / ((1.0 + rate_interest) ** (periods_num)));
+
+	return (1.0 / calcFutureValFactorCompoundIRViaIntPerV000(rate_interest, periods_num));
+}
+
+//  Swinburne University of Technology: Bachelor of Business (Finance) [BB-EngBus]: Financial Management Unit of Study (FIN20014)
+//  Week 2: Topic 2A - Time Value of Money
 //	@brief
 //	FV = PV * (1 + i) ^ t
 //	@param =>
