@@ -8,7 +8,7 @@
 	Branch: SponzaPlusPlus-patch-05
 
 	Description:
-	XC4536
+	Jaycar duinotech XC4536 Data Logging (Expansion) Shield, which features an SD Card Slot (interfaces almost directly to Arduino with 4 Digital pins) and a DS1307 Real-Time-Clock (RTC) IC with CR1220 battery backup.
 */
 
 // Call necessary modules/libraries via header files

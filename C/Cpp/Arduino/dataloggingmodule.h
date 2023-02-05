@@ -7,7 +7,7 @@
 	Branch: feat-comments-00
 
 	Description:
-	Contains the project source code responsible for communicating with the data logging expansion shield, which features an SD card and an RTC.
+	Contains the project source code responsible for communicating with the Jaycar duinotech XC4536 Data Logging (Expansion) Shield, which features an SD Card Slot (interfaces almost directly to Arduino with 4 Digital pins) and a DS1307 Real-Time-Clock (RTC) IC with CR1220 battery backup.
 */
 
 #ifndef INCLUDES_DATALOGGINGMODULE_H_
