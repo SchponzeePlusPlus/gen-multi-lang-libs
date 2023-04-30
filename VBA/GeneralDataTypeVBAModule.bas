@@ -343,9 +343,14 @@ Public Enum ExtExcptnHandlngNumStatesEnum
 End Enum
 
 '   E(xtended ?) E(rror / xception ?) H(andling ?) Long Data Type
-Public Type EehnsLongV000
+Public Type EehnsLongTypeV000
     byteEehns As Byte
     val As Long
+End Type
+
+Public Type EehnsVariantTypeV000
+    byteEehns As Byte
+    val As Variant
 End Type
 
 '   Array Dimension Proportions Type V000
@@ -405,6 +410,85 @@ End Function
 
 Public Function PRINT_STR_OF_VARIANT_TYPENAME_V000(var As Variant) As String
 	PRINT_STR_OF_VARIANT_TYPENAME_V000 = TypeName(var)
+End Function
+
+Public Function ASSIGN_LONG_VAL_BYTE_EEHNS(in_long_val As Long) As Byte
+    Dim result As Byte
+
+    result = UNASSIGNED_BYTE_VAL
+    
+    ' If (in_long_val = UNASSIGNED_LONG_VAL) Then
+    ' Else
+    ' End If
+
+    ASSIGN_LONG_VAL_BYTE_EEHNS = result
+End Function
+
+Public Function ASSIGN_VARIANT_VAL_BYTE_EEHNS(in_var As Variant) As Byte
+    Dim result As Byte
+    Dim var_data_type As String
+
+    result = UNASSIGNED_BYTE_VAL
+
+    '   var_data_type = PRINT_STR_OF_VARIANT_TYPENAME_V000(in_var)
+    var_data_type = TypeName(in_var)
+
+    ASSIGN_VARIANT_VAL_BYTE_EEHNS = result
+End Function
+
+Public Function ASSIGN_LONG_VAL_BYTE_EEHNSE(in_long_val As Long) As ExtExcptnHandlngNumStatesEnum
+    Dim result As ExtExcptnHandlngNumStatesEnum
+
+    result = UNASSIGNED_BYTE_VAL
+    
+    If (in_long_val = UNASSIGNED_LONG_VAL) Then
+        result = UNASSIGNED_EEHNSE
+    ElseIf (in_long_val = NULL_LONG_VAL) Then
+        result = NULL_EEHNSE
+    ElseIf (in_long_val = VALID_LONG_VAL) Then
+        result = VALID_EEHNSE
+    ElseIf (in_long_val = MAX_LONG_VAL) Then
+        result = MAX_EEHNSE
+    ElseIf (in_long_val = INFINITY_LONG_VAL) Then
+        result = INFINITY_EEHNSE
+    ElseIf (in_long_val = _LONG_VAL) Then
+        result = _EEHNSE
+    ElseIf (in_long_val = _LONG_VAL) Then
+        result = _EEHNSE
+    ElseIf (in_long_val = _LONG_VAL) Then
+        result = _EEHNSE
+    ElseIf (in_long_val = _LONG_VAL) Then
+        result = _EEHNSE
+    ElseIf (in_long_val = _LONG_VAL) Then
+        result = _EEHNSE
+    ElseIf (in_long_val = _LONG_VAL) Then
+        result = _EEHNSE
+    ElseIf (in_long_val = _LONG_VAL) Then
+        result = _EEHNSE
+    ElseIf (in_long_val = _LONG_VAL) Then
+        result = _EEHNSE
+    ElseIf (in_long_val = _LONG_VAL) Then
+        result = _EEHNSE
+    ElseIf (in_long_val = _LONG_VAL) Then
+        result = _EEHNSE
+    ElseIf (in_long_val = _LONG_VAL) Then
+        result = _EEHNSE
+    Else
+    End If
+
+    ASSIGN_LONG_VAL_BYTE_EEHNSE = result
+End Function
+
+Public Function ASSIGN_VARIANT_VAL_BYTE_EEHNSE(in_var As Variant) As ExtExcptnHandlngNumStatesEnum
+    Dim result As ExtExcptnHandlngNumStatesEnum
+    Dim var_data_type As String
+
+    result = UNASSIGNED_BYTE_VAL
+
+    '   var_data_type = PRINT_STR_OF_VARIANT_TYPENAME_V000(in_var)
+    var_data_type = TypeName(in_var)
+
+    ASSIGN_VARIANT_VAL_BYTE_EEHNSE = result
 End Function
 
 '   Need to enter cast functions
