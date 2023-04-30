@@ -289,19 +289,23 @@ Public Const ERROR_REF_STRING_VAL As String = "#REF!"
 '   xlErrNA (= 2042) returns a __ error.
 Public Const NOT_AVAIL_STRING_VAL As String = "#N/A"
 Public Const NOT_APPLICABLE_STRING_VAL As String = "(NOT_APPLICABLE)"
-'   Need to finish defining string values...
-Public Const MISC_STRING_VAL As String = NOT_APPLICABLE_STRING_VAL + 1#
-Public Const OTHER_STRING_VAL As String = MISC_STRING_VAL + 1#
-Public Const TEST_STRING_VAL As String = OTHER_STRING_VAL + 1#
-Public Const MULTI_VAL_STRING_VAL As String = TEST_STRING_VAL + 1#
-Public Const ALL_VAL_STRING_VAL As String = MULTI_VAL_STRING_VAL + 1#
-Public Const VALID_STRING_VAL As String = ALL_VAL_STRING_VAL + 1#
-Public Const NEGATIVE_MAX_STRING_VAL As String = -1.79769313486231E308#
-Public Const NEGATIVE_INFINITY_STRING_VAL As String = NEGATIVE_MAX_STRING_VAL + 1#
-Public Const NEGATIVE_EPSILON_STRING_VAL As String = -4.94065645841247E-324#
-Public Const EPSILON_STRING_VAL As String = 4.94065645841247E-324#
-Public Const INFINITY_STRING_VAL As String = MAX_STRING_VAL - 1#
-Public Const MAX_STRING_VAL As String = 1.79769313486232E308#
+Public Const MISC_STRING_VAL As String = "(MISCELLANEOUS)"
+Public Const OTHER_STRING_VAL As String = "(OTHER)"
+Public Const TEST_STRING_VAL As String = "(TEST)"
+Public Const MULTI_VAL_STRING_VAL As String = "(MULTI-VALUE)"
+Public Const ALL_VAL_STRING_VAL As String = "(ALL-VALUES)"
+Public Const VALID_STRING_VAL As String = "(VALID)"
+
+'   Numeric constants don't really apply to String
+' Public Const NEGATIVE_MAX_STRING_VAL As String = -1.79769313486231E308#
+' Public Const NEGATIVE_INFINITY_STRING_VAL As String = NEGATIVE_MAX_STRING_VAL + 1#
+' Public Const NEGATIVE_EPSILON_STRING_VAL As String = -4.94065645841247E-324#
+' Public Const EPSILON_STRING_VAL As String = 4.94065645841247E-324#
+' Public Const INFINITY_STRING_VAL As String = MAX_STRING_VAL - 1#
+' Public Const MAX_STRING_VAL As String = 1.79769313486232E308#
+
+'   CVErr(xlErrValue)
+Public Const ERROR_VALUE_VARIANT_VAL As Variant = "#VALUE!"
 
 Public Enum ExtendedBoolV000
     TRUE_EXT_BOOL = TRUE_MS_OFFICE_LONG_VAL
