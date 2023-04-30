@@ -222,110 +222,189 @@ Public Const USABLE_LOWER_BOUNDARY_LONG_VAL As Long = -2147483478
 '       4.94065645841247E-324 to 1.79769313486232E308 for positive values
 '   https://docs.microsoft.com/en-us/office/vba/language/reference/user-interface-help/double-data-type
 
-Public Const ZERO_DOUBLE_VAL As Double = 0#
-Public Const TRUE_OFFICE_DOUBLE_VAL As Double = -1#
-Public Const TRUE_DOUBLE_VAL As Double = 1#
-Public Const FALSE_DOUBLE_VAL As Double = ZERO_DOUBLE_VAL
-Public Const INBETWEEN_TRUE_FALSE_DOUBLE_VAL As Double = VALID_DOUBLE_VAL + 1#
-Public Const NULL_DOUBLE_VAL As Double = NEGATIVE_INFINITY_DOUBLE_VAL + 1#
+Public Const ZERO_DBL_VAL As Double = 0#
+Public Const TRUE_OFFICE_DBL_VAL As Double = -1#
+Public Const TRUE_DBL_VAL As Double = 1#
+Public Const FALSE_DBL_VAL As Double = ZERO_DBL_VAL
+Public Const INBETWEEN_TRUE_FALSE_DBL_VAL As Double = VALID_DBL_VAL + 1#
+Public Const NULL_DBL_VAL As Double = NEGATIVE_INFINITY_DBL_VAL + 1#
 '   Actual default
-Public Const DEFAULT_DOUBLE_VAL As Double = 0
-Public Const UNASSIGNED_DOUBLE_VAL As Double = NULL_DOUBLE_VAL + 1#
-Public Const UNKNOWN_DOUBLE_VAL As Double = UNASSIGNED_DOUBLE_VAL + 1#
-Public Const UNCATEGORISED_DOUBLE_VAL As Double = UNKNOWN_DOUBLE_VAL + 1#
-Public Const UNDEFINED_DOUBLE_VAL As Double = UNCATEGORISED_DOUBLE_VAL + 1#
-Public Const ERROR_DOUBLE_VAL As Double = UNDEFINED_DOUBLE_VAL + 1#
-Public Const ERROR_NAME_DOUBLE_VAL As Double = ERROR_DOUBLE_VAL + 1#
-Public Const ERROR_NUM_DOUBLE_VAL As Double = ERROR_NAME_DOUBLE_VAL + 1#
-Public Const ERROR_NUM_DIV_ZERO_DOUBLE_VAL As Double = ERROR_NUM_DOUBLE_VAL + 1#
-Public Const ERROR_NUM_UNDEFINED_DOUBLE_VAL As Double = ERROR_NUM_DIV_ZERO_DOUBLE_VAL + 1#
-Public Const ERROR_REF_DOUBLE_VAL As Double = ERROR_NUM_UNDEFINED_DOUBLE_VAL + 1#
-Public Const NOT_AVAIL_DOUBLE_VAL As Double = ERROR_REF_DOUBLE_VAL + 1#
-Public Const NOT_APPLICABLE_DOUBLE_VAL As Double = NOT_AVAIL_DOUBLE_VAL + 1#
-Public Const MISC_DOUBLE_VAL As Double = NOT_APPLICABLE_DOUBLE_VAL + 1#
-Public Const OTHER_DOUBLE_VAL As Double = MISC_DOUBLE_VAL + 1#
-Public Const TEST_DOUBLE_VAL As Double = OTHER_DOUBLE_VAL + 1#
-Public Const MULTI_VAL_DOUBLE_VAL As Double = TEST_DOUBLE_VAL + 1#
-Public Const ALL_VAL_DOUBLE_VAL As Double = MULTI_VAL_DOUBLE_VAL + 1#
-Public Const VALID_DOUBLE_VAL As Double = ALL_VAL_DOUBLE_VAL + 1#
-Public Const NEGATIVE_MAX_DOUBLE_VAL As Double = -1.79769313486231E308#
-Public Const NEGATIVE_INFINITY_DOUBLE_VAL As Double = NEGATIVE_MAX_DOUBLE_VAL + 1#
-Public Const NEGATIVE_EPSILON_DOUBLE_VAL As Double = -4.94065645841247E-324#
-Public Const EPSILON_DOUBLE_VAL As Double = 4.94065645841247E-324#
-Public Const INFINITY_DOUBLE_VAL As Double = MAX_DOUBLE_VAL - 1#
-Public Const MAX_DOUBLE_VAL As Double = 1.79769313486232E308#
+Public Const DEFAULT_DBL_VAL As Double = 0
+Public Const UNASSIGNED_DBL_VAL As Double = NULL_DBL_VAL + 1#
+Public Const UNKNOWN_DBL_VAL As Double = UNASSIGNED_DBL_VAL + 1#
+Public Const UNCATEGORISED_DBL_VAL As Double = UNKNOWN_DBL_VAL + 1#
+Public Const UNDEFINED_DBL_VAL As Double = UNCATEGORISED_DBL_VAL + 1#
+Public Const ERROR_DBL_VAL As Double = UNDEFINED_DBL_VAL + 1#
+Public Const ERROR_NAME_DBL_VAL As Double = ERROR_DBL_VAL + 1#
+Public Const ERROR_NUM_DBL_VAL As Double = ERROR_NAME_DBL_VAL + 1#
+Public Const ERROR_NUM_DIV_ZERO_DBL_VAL As Double = ERROR_NUM_DBL_VAL + 1#
+Public Const ERROR_NUM_UNDEFINED_DBL_VAL As Double = ERROR_NUM_DIV_ZERO_DBL_VAL + 1#
+Public Const ERROR_REF_DBL_VAL As Double = ERROR_NUM_UNDEFINED_DBL_VAL + 1#
+Public Const NOT_AVAIL_DBL_VAL As Double = ERROR_REF_DBL_VAL + 1#
+Public Const NOT_APPLICABLE_DBL_VAL As Double = NOT_AVAIL_DBL_VAL + 1#
+Public Const MISC_DBL_VAL As Double = NOT_APPLICABLE_DBL_VAL + 1#
+Public Const OTHER_DBL_VAL As Double = MISC_DBL_VAL + 1#
+Public Const TEST_DBL_VAL As Double = OTHER_DBL_VAL + 1#
+Public Const MULTI_VAL_DBL_VAL As Double = TEST_DBL_VAL + 1#
+Public Const ALL_VAL_DBL_VAL As Double = MULTI_VAL_DBL_VAL + 1#
+Public Const VALID_DBL_VAL As Double = ALL_VAL_DBL_VAL + 1#
+Public Const NEGATIVE_MAX_DBL_VAL As Double = -1.79769313486231E308#
+Public Const NEGATIVE_INFINITY_DBL_VAL As Double = NEGATIVE_MAX_DBL_VAL + 1#
+Public Const NEGATIVE_EPSILON_DBL_VAL As Double = -4.94065645841247E-324#
+Public Const EPSILON_DBL_VAL As Double = 4.94065645841247E-324#
+Public Const INFINITY_DBL_VAL As Double = MAX_DBL_VAL - 1#
+Public Const MAX_DBL_VAL As Double = 1.79769313486232E308#
 
 '   Now that error / exception handling "codes" have taken up specific integer values
 '   , those values shouldn't be usable for other means such as ordinary calculations or variable assignment
-Public Const USABLE_UPPER_BOUNDARY_DOUBLE_VAL As Double = INFINITY_DOUBLE_VAL - 1#
-Public Const USABLE_LOWER_BOUNDARY_DOUBLE_VAL As Double = INBETWEEN_TRUE_FALSE_DOUBLE_VAL + 1#
+Public Const USABLE_UPPER_BOUNDARY_DBL_VAL As Double = INFINITY_DBL_VAL - 1#
+Public Const USABLE_LOWER_BOUNDARY_DBL_VAL As Double = INBETWEEN_TRUE_FALSE_DBL_VAL + 1#
 
 '   String Data Type
 
-Public Const ZERO_STRING_VAL As String = "0"
-Public Const TRUE_OFFICE_STRING_VAL As String = "TRUE"
-Public Const TRUE_STRING_VAL As String = TRUE_OFFICE_STRING_VAL
-Public Const FALSE_STRING_VAL As String = "FALSE"
-Public Const INBETWEEN_TRUE_FALSE_STRING_VAL As String = "(INBETWEEN TRUE & FALSE)"
+Public Const ZERO_STR_VAL As String = "0"
+Public Const TRUE_OFFICE_STR_VAL As String = "TRUE"
+Public Const TRUE_STR_VAL As String = TRUE_OFFICE_STR_VAL
+Public Const FALSE_STR_VAL As String = "FALSE"
+Public Const INBETWEEN_TRUE_FALSE_STR_VAL As String = "(INBETWEEN TRUE & FALSE)"
 '   xlErrNull (= 2000) returns a __ error.
-Public Const NULL_STRING_VAL As String = "#NULL!"
+Public Const NULL_STR_VAL As String = "#NULL!"
 '   Actual default
-Public Const DEFAULT_STRING_VAL As String = "(DEFAULT)"
-Public Const UNASSIGNED_STRING_VAL As String = "(UNASSIGNED)"
-Public Const UNKNOWN_STRING_VAL As String = "(UNKNOWN)"
-Public Const UNCATEGORISED_STRING_VAL As String = "(UNCATEGORISED)"
-Public Const UNDEFINED_STRING_VAL As String = "(UNDEFINED)"
+Public Const DEFAULT_STR_VAL As String = "(DEFAULT)"
+Public Const UNASSIGNED_STR_VAL As String = "(UNASSIGNED)"
+Public Const UNKNOWN_STR_VAL As String = "(UNKNOWN)"
+Public Const UNCATEGORISED_STR_VAL As String = "(UNCATEGORISED)"
+Public Const UNDEFINED_STR_VAL As String = "(UNDEFINED)"
 '   xlErrValue (= 2015) returns a #VALUE! error. (NOT USED)
-Public Const ERROR_STRING_VAL As String = "(ERROR)"
+Public Const ERROR_STR_VAL As String = "(ERROR)"
 '   xlErrName (= 2029) returns a __ error.
-Public Const ERROR_NAME_STRING_VAL As String = "#NAME?"
+Public Const ERROR_NAME_STR_VAL As String = "#NAME?"
 '   xlErrNum (= 2036) returns a __ error.
-Public Const ERROR_NUM_STRING_VAL As String = "#NUM!"
+Public Const ERROR_NUM_STR_VAL As String = "#NUM!"
 '   xlErrDiv0 (= 2007) returns a __ error.
-Public Const ERROR_NUM_DIV_ZERO_STRING_VAL As String = "#DIV/0!"
-Public Const ERROR_NUM_UNDEFINED_STRING_VAL As String = "(ERROR_NUM_UNDEF)"
+Public Const ERROR_NUM_DIV_ZERO_STR_VAL As String = "#DIV/0!"
+Public Const ERROR_NUM_UNDEFINED_STR_VAL As String = "(ERROR_NUM_UNDEF)"
 '   xlErrRef (= 2023) returns a __ error.
-Public Const ERROR_REF_STRING_VAL As String = "#REF!"
+Public Const ERROR_REF_STR_VAL As String = "#REF!"
 '   xlErrNA (= 2042) returns a __ error.
-Public Const NOT_AVAIL_STRING_VAL As String = "#N/A"
-Public Const NOT_APPLICABLE_STRING_VAL As String = "(NOT_APPLICABLE)"
-Public Const MISC_STRING_VAL As String = "(MISCELLANEOUS)"
-Public Const OTHER_STRING_VAL As String = "(OTHER)"
-Public Const TEST_STRING_VAL As String = "(TEST)"
-Public Const MULTI_VAL_STRING_VAL As String = "(MULTI-VALUE)"
-Public Const ALL_VAL_STRING_VAL As String = "(ALL-VALUES)"
-Public Const VALID_STRING_VAL As String = "(VALID)"
+Public Const NOT_AVAIL_STR_VAL As String = "#N/A"
+Public Const NOT_APPLICABLE_STR_VAL As String = "(NOT_APPLICABLE)"
+Public Const MISC_STR_VAL As String = "(MISCELLANEOUS)"
+Public Const OTHER_STR_VAL As String = "(OTHER)"
+Public Const TEST_STR_VAL As String = "(TEST)"
+Public Const MULTI_VAL_STR_VAL As String = "(MULTI-VALUE)"
+Public Const ALL_VAL_STR_VAL As String = "(ALL-VALUES)"
+Public Const VALID_STR_VAL As String = "(VALID)"
 
 '   Numeric constants don't really apply to String
-' Public Const NEGATIVE_MAX_STRING_VAL As String = -1.79769313486231E308#
-' Public Const NEGATIVE_INFINITY_STRING_VAL As String = NEGATIVE_MAX_STRING_VAL + 1#
-' Public Const NEGATIVE_EPSILON_STRING_VAL As String = -4.94065645841247E-324#
-' Public Const EPSILON_STRING_VAL As String = 4.94065645841247E-324#
-' Public Const INFINITY_STRING_VAL As String = MAX_STRING_VAL - 1#
-' Public Const MAX_STRING_VAL As String = 1.79769313486232E308#
+' Public Const NEGATIVE_MAX_STR_VAL As String = -1.79769313486231E308#
+' Public Const NEGATIVE_INFINITY_STR_VAL As String = NEGATIVE_MAX_STR_VAL + 1#
+' Public Const NEGATIVE_EPSILON_STR_VAL As String = -4.94065645841247E-324#
+' Public Const EPSILON_STR_VAL As String = 4.94065645841247E-324#
+' Public Const INFINITY_STR_VAL As String = MAX_STR_VAL - 1#
+' Public Const MAX_STR_VAL As String = 1.79769313486232E308#
 
 '   CVErr(xlErrValue)
 Public Const ERROR_VALUE_VARIANT_VAL As Variant = "#VALUE!"
 
-Public Enum ExtendedBoolV000
-    TRUE_EXT_BOOL = TRUE_MS_OFFICE_LONG_VAL
-    FALSE_EXT_BOOL = FALSE_LONG_VAL
-    INBETWEEN_T_F_EXT_BOOL = INBETWEEN_TRUE_FALSE_LONG_VAL
-    NULL_EXT_BOOL = NULL_LONG_VAL
+'   Extended Boolean Enumerator V000
+Public Enum ExtBoolEnumV000
+    TRUE_EBE = TRUE_MS_OFFICE_LONG_VAL
+    FALSE_EBE = FALSE_LONG_VAL
+    INBETWEEN_T_F_EBE = INBETWEEN_TRUE_FALSE_LONG_VAL
+    NULL_EBE = NULL_LONG_VAL
     '   DEFAULT_LONG_VAL = 0 so can't be used
-    DEFAULT_EXT_BOOL = 2
-    UNASSIGNED_EXT_BOOL = UNASSIGNED_LONG_VAL
-    UNKNOWN_EXT_BOOL = UNKNOWN_LONG_VAL
+    DEFAULT_EBE = 2
+    UNASSIGNED_EBE = UNASSIGNED_LONG_VAL
+    UNKNOWN_EBE = UNKNOWN_LONG_VAL
+    NOT_APPLICABLE_EBE = NOT_APPLICABLE_LONG_VAL
+    ERROR_EBE = ERROR_LONG_VAL
+    TEST_EBE = TEST_LONG_VAL
+End Enum
+
+'   ExtendedExceptionHandlingNumericStatesEnum
+'   EEHNSE
+Public Enum ExtExcptnHandlngNumStatesEnum
+    UNASSIGNED_EEHNSE = UNASSIGNED_LONG_VAL
+    NULL_EEHNSE = NULL_LONG_VAL
+    VALID_EEHNSE = VALID_LONG_VAL
+    MAX_EEHNSE = MAX_LONG_VAL
+    INFINITY_EEHNSE = INFINITY_LONG_VAL
+    NEGATIVE_MAX_EEHNSE = NEGATIVE_MAX_LONG_VAL
+    NEGATIVE_INFINITY_EEHNSE = NEGATIVE_INFINITY_LONG_VAL
+    EPSILON_EEHNSE = EPSILON_LONG_VAL
+    NEGATIVE_EPSILON_EEHNSE = NEGATIVE_EPSILON_LONG_VAL
+    MULTI_VAL_EEHNSE = MULTI_VAL_LONG_VAL
+    UNKNOWN_EEHNSE = UNKNOWN_LONG_VAL
+    NOT_APPLICABLE_EEHNSE = NOT_APPLICABLE_LONG_VAL
+    NOT_AVAIL_EEHNSE = NOT_AVAIL_LONG_VAL
+    ERROR_EEHNSE = ERROR_LONG_VAL
+    TEST_EEHNSE = TEST_LONG_VAL
 End Enum
 
 '   E(xtended ?) E(rror / xception ?) H(andling ?) Long Data Type
-Public Type EEHLongV000
-    gnvs As Byte
+Public Type EehnsLongV000
+    byteEehns As Byte
     val As Long
 End Type
 
-Public Function PRINT_STRING_OF_VARIANT_TYPENAME_V000(var As Variant) As String
-	PRINT_STRING_OF_VARIANT_TYPENAME_V000 = TypeName(var)
+'   Array Dimension Proportions Type V000
+Public Type ArrDimPropsTypeV000
+    dim_bndry_lwr As Long
+    dim_bndry_upr As Long
+    dim_length As Long
+End Type
+
+Public Function RETURN_ERROR_INT_VAL_V000() As Integer
+    RETURN_ERROR_INT_VAL_V000 = ERROR_INTEGER_VAL
+End Function
+
+Public Function RETURN_NULL_INT_VAL_V000() As Integer
+    RETURN_NULL_INT_VAL_V000 = NULL_INTEGER_VAL
+End Function
+
+Public Function RETURN_ERROR_LONG_VAL_V000() As Long
+    RETURN_ERROR_LONG_VAL_V000 = ERROR_LONG_VAL
+End Function
+
+Public Function RETURN_NULL_LONG_VAL_V000() As Long
+    RETURN_NULL_LONG_VAL_V000 = NULL_LONG_VAL
+End Function
+
+Public Function RETURN_UNASSIGNED_DBL_VAL_V000() As Double
+    RETURN_UNASSIGNED_DBL_VAL_V000 = UNASSIGNED_DBL_VAL
+End Function
+
+Public Function RETURN_ERROR_DBL_VAL_V000() As Double
+    RETURN_ERROR_DBL_VAL_V000 = ERROR_DBL_VAL
+End Function
+
+Public Function RETURN_NULL_DBL_VAL_V000() As Double
+    RETURN_NULL_DBL_VAL_V000 = NULL_DBL_VAL
+End Function
+
+Public Function RETURN_MAX_DBL_VAL_V000() As Double
+    RETURN_MAX_DBL_VAL_V000 = MAX_DBL_VAL
+End Function
+
+Public Function RETURN_NEGATIVE_MAX_DBL_VAL_V000() As Double
+    RETURN_NEGATIVE_MAX_DBL_VAL_V000 = NEGATIVE_MAX_DBL_VAL
+End Function
+
+Public Function RETURN_UNASSIGNED_STR_VAL_V000() As String
+    RETURN_UNASSIGNED_STR_VAL_V000 = UNASSIGNED_STR_VAL
+End Function
+
+Public Function RETURN_ERROR_STR_VAL_V000() As String
+    RETURN_ERROR_STR_VAL_V000 = ERROR_STR_VAL
+End Function
+
+Public Function RETURN_NULL_STR_VAL_V000() As String
+    RETURN_NULL_STR_VAL_V000 = NULL_STR_VAL
+End Function
+
+Public Function PRINT_STR_OF_VARIANT_TYPENAME_V000(var As Variant) As String
+	PRINT_STR_OF_VARIANT_TYPENAME_V000 = TypeName(var)
 End Function
 
 '   Need to enter cast functions
