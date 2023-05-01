@@ -436,7 +436,7 @@ Public Function ASSIGN_VARIANT_VAL_BYTE_EEHNS(in_var As Variant) As Byte
     ASSIGN_VARIANT_VAL_BYTE_EEHNS = result
 End Function
 
-Public Function ASSIGN_LONG_VAL_BYTE_EEHNSE(in_long_val As Long) As ExtExcptnHandlngNumStatesEnum
+Public Function ASSIGN_LONG_VAL_EEHNSE(in_long_val As Long) As ExtExcptnHandlngNumStatesEnum
     Dim result As ExtExcptnHandlngNumStatesEnum
 
     result = UNASSIGNED_BYTE_VAL
@@ -461,34 +461,146 @@ Public Function ASSIGN_LONG_VAL_BYTE_EEHNSE(in_long_val As Long) As ExtExcptnHan
         result = NEGATIVE_EPSILON_EEHNSE
     ElseIf (in_long_val = MULTI_VAL_LONG_VAL) Then
         result = MULTI_VAL_EEHNSE
-    ElseIf (in_long_val = _LONG_VAL) Then
-        result = _EEHNSE
-    ElseIf (in_long_val = _LONG_VAL) Then
-        result = _EEHNSE
-    ElseIf (in_long_val = _LONG_VAL) Then
-        result = _EEHNSE
-    ElseIf (in_long_val = _LONG_VAL) Then
-        result = _EEHNSE
-    ElseIf (in_long_val = _LONG_VAL) Then
-        result = _EEHNSE
-    ElseIf (in_long_val = _LONG_VAL) Then
-        result = _EEHNSE
+    ElseIf (in_long_val = UNKNOWN_LONG_VAL) Then
+        result = UNKNOWN_EEHNSE
+    ElseIf (in_long_val = NOT_APPLICABLE_LONG_VAL) Then
+        result = NOT_APPLICABLE_EEHNSE
+    ElseIf (in_long_val = NOT_AVAILABLE_LONG_VAL) Then
+        result = NOT_AVAILABLE_EEHNSE
+    ElseIf (in_long_val = ERROR_LONG_VAL) Then
+        result = ERROR_EEHNSE
+    ElseIf (in_long_val = TEST_LONG_VAL) Then
+        result = TEST_EEHNSE
+    ElseIf ((in_long_val <> UNASSIGNED_LONG_VAL) And (in_long_val <> NULL_LONG_VAL) And (in_long_val <> VALID_LONG_VAL) And (in_long_val <> MAX_LONG_VAL) And _
+        (in_long_val <> INFINITY_LONG_VAL) And (in_long_val <> NEGATIVE_MAX_LONG_VAL) And (in_long_val <> NEGATIVE_INFINITY_LONG_VAL) And (in_long_val <> EPSILON_LONG_VAL) And _
+        (in_long_val <> NEGATIVE_EPSILON_LONG_VAL) And (in_long_val <> MULTI_VAL_LONG_VAL) And (in_long_val <> UNKNOWN_LONG_VAL) And (in_long_val <> NOT_APPLICABLE_LONG_VAL) And _
+        (in_long_val <> NOT_AVAILABLE_LONG_VAL) And (in_long_val <> ERROR_LONG_VAL) And (in_long_val <> TEST_LONG_VAL)) Then
+        result = VALID_EEHNSE
     Else
+        result = UNKNOWN_EEHNSE
     End If
 
-    ASSIGN_LONG_VAL_BYTE_EEHNSE = result
+    ASSIGN_LONG_VAL_EEHNSE = result
 End Function
 
-Public Function ASSIGN_VARIANT_VAL_BYTE_EEHNSE(in_var As Variant) As ExtExcptnHandlngNumStatesEnum
+Public Function ASSIGN_DBL_VAL_EEHNSE(in_dbl_val As Double) As ExtExcptnHandlngNumStatesEnum
+    Dim result As ExtExcptnHandlngNumStatesEnum
+
+    result = UNASSIGNED_BYTE_VAL
+    
+    If (in_dbl_val = UNASSIGNED_DBL_VAL) Then
+        result = UNASSIGNED_EEHNSE
+    ElseIf (in_dbl_val = NULL_DBL_VAL) Then
+        result = NULL_EEHNSE
+    ElseIf (in_dbl_val = VALID_DBL_VAL) Then
+        result = VALID_EEHNSE
+    ElseIf (in_dbl_val = MAX_DBL_VAL) Then
+        result = MAX_EEHNSE
+    ElseIf (in_dbl_val = INFINITY_DBL_VAL) Then
+        result = INFINITY_EEHNSE
+    ElseIf (in_dbl_val = NEGATIVE_MAX_DBL_VAL) Then
+        result = NEGATIVE_MAX_EEHNSE
+    ElseIf (in_dbl_val = NEGATIVE_INFINITY_DBL_VAL) Then
+        result = NEGATIVE_INFINITY_EEHNSE
+    ElseIf (in_dbl_val = EPSILON_DBL_VAL) Then
+        result = EPSILON_EEHNSE
+    ElseIf (in_dbl_val = NEGATIVE_EPSILON_DBL_VAL) Then
+        result = NEGATIVE_EPSILON_EEHNSE
+    ElseIf (in_dbl_val = MULTI_VAL_DBL_VAL) Then
+        result = MULTI_VAL_EEHNSE
+    ElseIf (in_dbl_val = UNKNOWN_DBL_VAL) Then
+        result = UNKNOWN_EEHNSE
+    ElseIf (in_dbl_val = NOT_APPLICABLE_DBL_VAL) Then
+        result = NOT_APPLICABLE_EEHNSE
+    ElseIf (in_dbl_val = NOT_AVAILABLE_DBL_VAL) Then
+        result = NOT_AVAILABLE_EEHNSE
+    ElseIf (in_dbl_val = ERROR_DBL_VAL) Then
+        result = ERROR_EEHNSE
+    ElseIf (in_dbl_val = TEST_DBL_VAL) Then
+        result = TEST_EEHNSE
+    ElseIf ((in_dbl_val <> UNASSIGNED_DBL_VAL) And (in_dbl_val <> NULL_DBL_VAL) And (in_dbl_val <> VALID_DBL_VAL) And (in_dbl_val <> MAX_DBL_VAL) And _
+        (in_dbl_val <> INFINITY_DBL_VAL) And (in_dbl_val <> NEGATIVE_MAX_DBL_VAL) And (in_dbl_val <> NEGATIVE_INFINITY_DBL_VAL) And (in_dbl_val <> EPSILON_DBL_VAL) And _
+        (in_dbl_val <> NEGATIVE_EPSILON_DBL_VAL) And (in_dbl_val <> MULTI_VAL_DBL_VAL) And (in_dbl_val <> UNKNOWN_DBL_VAL) And (in_dbl_val <> NOT_APPLICABLE_DBL_VAL) And _
+        (in_dbl_val <> NOT_AVAILABLE_DBL_VAL) And (in_dbl_val <> ERROR_DBL_VAL) And (in_dbl_val <> TEST_DBL_VAL)) Then
+        result = VALID_EEHNSE
+    Else
+        result = UNKNOWN_EEHNSE
+    End If
+
+    ASSIGN_DBL_VAL_EEHNSE = result
+End Function
+
+Public Function ASSIGN_VARIANT_VAL_EEHNSE(in_var As Variant) As ExtExcptnHandlngNumStatesEnum
     Dim result As ExtExcptnHandlngNumStatesEnum
     Dim var_data_type As String
 
-    result = UNASSIGNED_BYTE_VAL
+    result = UNASSIGNED_EEHNSE
 
     '   var_data_type = PRINT_STR_OF_VARIANT_TYPENAME_V000(in_var)
     var_data_type = TypeName(in_var)
 
-    ASSIGN_VARIANT_VAL_BYTE_EEHNSE = result
+    '   Need to cast / convert into these functions
+    Select Case var_data_type
+        Case "Long"
+            result = ASSIGN_LONG_VAL_EEHNSE(in_var)
+        Case "Double"
+            result = ASSIGN_DBL_VAL_EEHNSE(in_var)
+        Case Else
+            result = UNKNOWN_EEHNSE
+    End Select
+
+    ASSIGN_VARIANT_VAL_EEHNSE = result
+End Function
+
+Public Function ASSIGN_DBL_EEHNS_VIA_EEHNSE(in_eehnse As ExtExcptnHandlngNumStatesEnum) As Double
+    Dim result As Double
+
+    Select Case in_eehnse
+        Case UNASSIGNED_EEHNSE
+            result = UNASSIGNED_DBL_VAL
+        Case NULL_EEHNSE
+            result = NULL_DBL_VAL
+        Case VALID_EEHNSE
+            result = VALID_DBL_VAL
+        Case MAX_EEHNSE
+            result = MAX_DBL_VAL
+        Case INFINITY_EEHNSE
+            result = INFINITY_DBL_VAL
+        Case NEGATIVE_MAX_EEHNSE
+            result = NEGATIVE_MAX_DBL_VAL
+        Case NEGATIVE_INFINITY_EEHNSE
+            result = NEGATIVE_INFINITY_DBL_VAL
+        Case EPSILON_EEHNSE
+            result = EPSILON_DBL_VAL
+        Case NEGATIVE_EPSILON_EEHNSE
+            result = NEGATIVE_EPSILON_DBL_VAL
+        Case MULTI_VAL_EEHNSE
+            result = MULTI_VAL_DBL_VAL
+        Case UNKNOWN_EEHNSE
+            result = UNKNOWN_DBL_VAL
+        Case NOT_APPLICABLE_EEHNSE
+            result = NOT_APPLICABLE_DBL_VAL
+        Case NOT_AVAIL_EEHNSE
+            result = NOT_AVAIL_DBL_VAL
+        Case ERROR_EEHNSE
+            result = ERROR_DBL_VAL
+        Case TEST_EEHNSE
+            result = TEST_DBL_VAL
+        Case Else
+            result = UNKNOWN_DBL_VAL
+    End Select
+
+    ASSIGN_DBL_EEHNS_VIA_EEHNSE = result
+End Function
+
+' Public Type ArrDimPropsTypeV000
+'     dim_bndry_lwr As Long
+'     dim_bndry_upr As Long
+'     dim_length As Long
+' End Type
+
+Public Function CREATE_LONG_ONE_DIM_ARRDIMPROPSTYPE(long_in_od_arr() As Long) As ArrDimPropsTypeV000
+    ...
 End Function
 
 '   Need to enter cast functions
