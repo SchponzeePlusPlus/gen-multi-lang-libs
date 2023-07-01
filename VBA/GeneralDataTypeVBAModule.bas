@@ -354,7 +354,7 @@ Public Type EehnsVariantTypeV000
 End Type
 
 '   Array Dimension Proportions Type V000
-Public Type ArrDimPropsTypeV000
+Public Type ArrDimPropsLngTypeV000
     dim_bndry_lwr As Long
     dim_bndry_upr As Long
     dim_length As Long
@@ -593,14 +593,19 @@ Public Function ASSIGN_DBL_EEHNS_VIA_EEHNSE(in_eehnse As ExtExcptnHandlngNumStat
     ASSIGN_DBL_EEHNS_VIA_EEHNSE = result
 End Function
 
-' Public Type ArrDimPropsTypeV000
+' Public Type ArrDimPropsLngTypeV000
 '     dim_bndry_lwr As Long
 '     dim_bndry_upr As Long
 '     dim_length As Long
 ' End Type
 
-Public Function CREATE_LONG_ONE_DIM_ARRDIMPROPSTYPE(long_in_od_arr() As Long) As ArrDimPropsTypeV000
-    ...
+Public Function CREATE_LONG_ONE_DIM_ARRDIMPROPSLNGTYPE(long_in_od_arr() As Long) As ArrDimPropsLngTypeV000
+    Dim result As ArrDimPropsLngTypeV000
+    result.dim_bndry_lwr = LBound(long_in_od_arr, 1)
+    result.dim_bndry_upr = UBound(long_in_od_arr, 1)
+    result.dim_length = dim_bndry_upr + dim_bndry_lwr + 1
+
+    CREATE_LONG_ONE_DIM_ARRDIMPROPSLNGTYPE = result
 End Function
 
 '   Need to enter cast functions
