@@ -599,13 +599,40 @@ End Function
 '     dim_length As Long
 ' End Type
 
-Public Function CREATE_LONG_ONE_DIM_ARRDIMPROPSLNGTYPE(long_in_od_arr() As Long) As ArrDimPropsLngTypeV000
+Public Function CREATE_LNG_ARR_ONE_DIM_ARRDIMPROPSLNGTYPE(long_in_od_arr() As Long) As ArrDimPropsLngTypeV000
     Dim result As ArrDimPropsLngTypeV000
     result.dim_bndry_lwr = LBound(long_in_od_arr, 1)
     result.dim_bndry_upr = UBound(long_in_od_arr, 1)
     result.dim_length = dim_bndry_upr + dim_bndry_lwr + 1
 
-    CREATE_LONG_ONE_DIM_ARRDIMPROPSLNGTYPE = result
+    CREATE_LNG_ARR_ONE_DIM_ARRDIMPROPSLNGTYPE = result
+End Function
+
+Public Function CREATE_DBL_ARR_ONE_DIM_ARRDIMPROPSLNGTYPE(dbl_in_od_arr() As Double) As ArrDimPropsLngTypeV000
+    Dim result As ArrDimPropsLngTypeV000
+    result.dim_bndry_lwr = LBound(dbl_in_od_arr, 1)
+    result.dim_bndry_upr = UBound(dbl_in_od_arr, 1)
+    result.dim_length = dim_bndry_upr + dim_bndry_lwr + 1
+
+    CREATE_DBL_ARR_ONE_DIM_ARRDIMPROPSLNGTYPE = result
+End Function
+
+Public Function CREATE_STR_ARR_ONE_DIM_ARRDIMPROPSLNGTYPE(str_in_od_arr() As String) As ArrDimPropsLngTypeV000
+    Dim result As ArrDimPropsLngTypeV000
+    result.dim_bndry_lwr = LBound(str_in_od_arr, 1)
+    result.dim_bndry_upr = UBound(str_in_od_arr, 1)
+    result.dim_length = dim_bndry_upr + dim_bndry_lwr + 1
+
+    CREATE_STR_ARR_ONE_DIM_ARRDIMPROPSLNGTYPE = result
+End Function
+
+Public Function CREATE_VAR_ARR_ONE_DIM_ARRDIMPROPSLNGTYPE(var_in_od_arr() As Variant) As ArrDimPropsLngTypeV000
+    Dim result As ArrDimPropsLngTypeV000
+    result.dim_bndry_lwr = LBound(var_in_od_arr, 1)
+    result.dim_bndry_upr = UBound(var_in_od_arr, 1)
+    result.dim_length = dim_bndry_upr + dim_bndry_lwr + 1
+
+    CREATE_VAR_ARR_ONE_DIM_ARRDIMPROPSLNGTYPE = result
 End Function
 
 '   Need to enter cast functions
