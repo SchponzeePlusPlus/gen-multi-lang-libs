@@ -64,6 +64,19 @@ Attribute VB_Name = "GeneralEngVBAModule"
 '
 '	Routines Called:
 
+Public Const INT_CONSTENGMETRICPREFIX_FACTOR_DECA As Integer = 10
+'	...HECTO
+Public Const INT_CONSTENGMETRICPREFIX_FACTOR_KILO As Integer = 1000
+'	...
+
+'	https://www.rapidtables.com/convert/length/meter-to-inch.html?x=1
+Public Const DBL_CONSTENGDIST_METRES_PER_INCH As Double = 39.37007874#
+Public Const INT_CONSTENGDIST_INCHES_PER_FOOT As Integer = 12
+
+Public Const INT_CONSTENGTIME_SECS_PER_MIN As Integer = 60
+Public Const INT_CONSTENGTIME_MINS_PER_HR As Integer = 60
+
+
 Public Function CALC_FORCE_N_VIA_M_A_V000(mass_kg As Double, accel_mpssq As Double) As Double
 	CALC_FORCE_N_VIA_M_A_V000 = (mass_kg * accel_mpssq)
 End Function
@@ -74,6 +87,10 @@ End Function
 
 Public Function CALC_POWER_W_VIA_V_I_V000(voltage_v As Double, current_a As Double) As Double
 	CALC_POWER_W_VIA_V_I_V000 = (voltage_v * current_a)
+End Function
+
+Public Function CALC_DBL_ENERGY_J_VIA_P_T_V000(watt_w As Double, time_s As Double) As Double
+	CALC_DBL_ENERGY_J_VIA_P_T_V000 = (watt_w * time_s)
 End Function
 
 Public Function CALC_R_TWO_V_OUT_VIA_VOLT_DIV_V_IN_R_ONE_R_TWO_V000(v_in As Double, r_one As Double, r_two As Double) As Double
