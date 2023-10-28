@@ -64,6 +64,12 @@ Attribute VB_Name = "GeneralMathVBAModule"
 '
 '	Routines Called:
 
+'   Cartesian Plane ?
+Public Type typ_PntTwoDim_dbl
+    x As Double
+    y As Double
+End Type
+
 Public Function CALC_F_VIA_LINEAR_FUNC_DOUBLE_V000(grad As Double, x_val As Double, f_int As Double)
     '   y = m * x + c
     CALC_F_VIA_LINEAR_FUNC_DOUBLE_V000 = (grad * x_val) + f_int
